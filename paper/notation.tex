@@ -1,0 +1,118 @@
+\newcommand\raisepunct[1]{\,\mathpunct{\raisebox{0.5ex}{#1}}}
+\tikzset{latency/.style={path picture={ 
+    \draw[black]
+  (-.4, .1) -- (-0.1, 0.25) (-.4,.4) -- (-.1, 0.25);
+  \draw[black]
+  (-.4, .1) -- (-0.1, -0.05) (-.4,.-.2) -- (-.1, -0.05);
+  }}}
+  \tikzset{latencysbox/.style={path picture={ 
+    \draw[black]
+  (.3, -.5) -- (.45, -.2) (.45,-.2) -- (.6, -.5);
+  }}}
+\tikzset{mux 4by2/.style={muxdemux,
+muxdemux def={Lh=4, NL=4, Rh=3,
+NB=1, w=1, square pins=1}}}
+
+\tikzset{mux 3by2/.style={muxdemux,
+muxdemux def={Lh=4, NL=3, Rh=3,
+NB=1, w=1, square pins=1}}}
+
+\tikzset{mux 2by2/.style={muxdemux,
+muxdemux def={Lh=3, NL=2, Rh=2,
+NB=1, w=1, square pins=1}}}
+\newcommand{\register}[1]{ node[rectangle, draw, minimum height = .75cm, minimum width = .75cm, name={#1}, bottomreg] {}}
+\newcommand{\registerrot}[1]{ node[rectangle, draw, minimum height = .75cm, minimum width = .75cm, name={#1}, leftreg] {}}
+\newcommand{\registerEn}[1]{ node[rectangle, draw, minimum height = .75cm, minimum width = .75cm, name={#1}, enable] {}}
+\newcommand{\ro}[1]{ node[name={#1}, rectangle, rounded corners=3pt, minimum width=.5cm, minimum height=.8cm, draw, sparsam] {$\rho$}}
+\newcommand{\rospa}[1]{ node[name={#1}, rectangle, fill = SPAgreen, rounded corners=3pt, minimum width=.5cm, minimum height=.8cm, draw, sparsam] {$\rho$}}
+\newcommand{\rodpa}[1]{ node[name={#1}, fill = DPAblue, rectangle, rounded corners=3pt, minimum width=.5cm, minimum height=.8cm, draw, sparsam] {$\rho$}}
+\newcommand{\tencdpa}[1]{ node[minimum size=1.25cm, fill = DPAblue, rounded corners=1ex, draw, name={#1}] {$\mathsf{\tilde{E}_{K, N}}$}}
+
+\newcommand{\xor}[1]{ node[circle, inner sep=-1.3pt, name={#1}] {$\oplus$}}
+\tikzset{bottomreg/.style={path picture={ 
+  \draw[black]
+(path picture bounding box.south west) -- (path picture bounding box.center) (path picture bounding box.south east) -- (path picture bounding box.center);
+}}}
+\tikzset{enable/.style={path picture={ 
+  \node[] at (0,.25) {\footnotesize en};
+    \draw[black]
+(path picture bounding box.south west) -- (path picture bounding box.center) (path picture bounding box.south east) -- (path picture bounding box.center);
+}}}
+\tikzset{leftreg/.style={path picture={ 
+  \draw[black]
+(path picture bounding box.south west) -- (path picture bounding box.center) (path picture bounding box.north west) -- (path picture bounding box.center);
+}}}
+\newcommand{\xord}[1]{node [draw,circle,addition,minimum width=.4 cm, name = {#1}] {}}
+\tikzset{addition/.style={path picture={ 
+    \draw[black]
+  (path picture bounding box.south) -- (path picture bounding box.north) (path picture bounding box.west) -- (path picture bounding box.east);
+  }}}
+  
+\newcommand{\bitwidth}{\tikz{\draw[-] (-2pt,-2pt) -- (2pt, 2pt);}}
+
+\tikzset{bitwidth/.style={above=-1pt, font=\tiny}}
+\tikzset{bitwidthvert/.style={right = -1pt, font=\tiny}}
+\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
+\tikzset{
+  contact/.style={
+    circle, 
+    fill=black,
+    minimum size=5pt, 
+    inner sep=0pt,
+    anchor=center,
+  },
+}
+\newcommand{\andd}[1]{node [draw,circle,cross,minimum width=.4 cm, thick, name = {#1}] {}}
+\tikzset{next/.style={->, >=latex}}
+\tikzset{cross/.style={path picture={ 
+    \draw[black]
+  (path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+  }}}
+\tikzset{addition/.style={path picture={ 
+    \draw[black]
+  (path picture bounding box.south) -- (path picture bounding box.north) (path picture bounding box.west) -- (path picture bounding box.east);
+  }}}
+% color definition
+\definecolor{SPAvgreen}{RGB}{0,154,23}
+\definecolor{SPAgreen}{RGB}{127,255,0}
+\definecolor{DPAblue}{RGB}{0,64,255}
+
+\newcommand{\rate}{.5cm}
+\newcommand{\perm}[1]{ node[rectangle, rounded corners=3pt, minimum width=.5cm, minimum height=1.8cm, draw, sparsam] {$\pi^{#1}$}}
+\newcommand{\boxele}[1] {node [rectangle, rounded corners=3pt, minimum width=1.5cm, minimum height=1.2cm, draw, sparsam, thick, name = {#1}] {$\mathtt{#1}$}}
+\newcommand{\permspa}[1]{ node[rectangle, fill = SPAgreen, rounded corners=3pt, minimum width=.5cm, minimum height=1.8cm, draw, sparsam] {$\pi^{#1}$}}
+\newcommand{\permdpa}[1]{ node[rectangle, fill = DPAblue, rounded corners=3pt, minimum width=.5cm, minimum height=1.8cm, draw, sparsam] {$\pi^{#1}$}}
+\newcommand{\permspav}[1]{ node[rectangle, fill = SPAvgreen, rounded corners=3pt, minimum width=.5cm, minimum height=1.8cm, draw, sparsam] {$\pi^{#1}$}}
+\tikzset{sparsam/.style={inner sep=1pt}}
+\newcommand{\xorspa}[1]{ node[circle, fill = SPAgreen, inner sep=-1.3pt, name={#1}] {$\oplus$}}
+\newcommand{\xorspav}[1]{ node[circle, fill = SPAvgreen, inner sep=-1.3pt, name={#1}] {$\oplus$}}
+\newcommand{\msg}{.7cm}
+\newcommand{\minnext}{.4cm}
+\newcommand{\phase}{1.7cm}
+\newcommand{\xordpa}[1]{ node[circle, fill = DPAblue, inner sep=-1.3pt, name={#1}] {$\oplus$}}
+
+\newcommand{\tbc}[1]{ node[minimum size=1.25cm,rounded corners=1ex, draw, name={#1}] {$\mathsf{\tilde{E}}$}}
+\newcommand{\tbcdpa}[1]{ node[fill = DPAblue, minimum size=1.25cm,rounded corners=1ex, draw, name={#1}] {$\mathsf{\tilde{E}}$}}
+\newcommand{\tbcspa}[1]{ node[fill = SPAgreen, minimum size=1.25cm,rounded corners=1ex, draw, name={#1}] {$\mathsf{\tilde{E}}$}}
+\newcommand{\tbcspav}[1]{ node[fill = SPAvgreen, minimum size=1.25cm,rounded corners=1ex, draw, name={#1}] {$\mathsf{\tilde{E}}$}}
+
+\newcommand{\skinnyll}{\ensuremath{S_{\mathrm{LL}}}\xspace}
+\newcommand{\skinnyb}{\ensuremath{S_{\mathrm{B}}}\xspace}
+\newcommand{\skinnys}{\ensuremath{S_{\mathrm{S}}}\xspace}
+\newcommand{\asconp}{\ensuremath{\text{Ascon-p}}\xspace}
+
+\newcommand{\randtake}{\overset{\$}{\gets}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\sharing}[2][]{\vec{{#2}}^{#1}}
+\newcommand{\gf}[1]{\mathbb{F}_{#1}}
+\newcommand{\ft}{\gf{2}}
+\newcommand{\reg}{\textsf{Reg}}
+\newcommand{\func}[2]{#1\left(#2\right)}
+\newcommand{\nShares}{d}
+\newcommand{\algrule}[1][.2pt]{\par\vskip.5\baselineskip\hrule height #1\par\vskip.5\baselineskip}
+\newcommand{\share}[3][]{\sharing[#1]{#2}_{#3}}
+
+\newcommand{\algorithmautorefname}{Algorithm}
+\def\sectionautorefname{Section} 
+\def\subsectionautorefname{Section} 
+\def\appendixautorefname{Appendix}
