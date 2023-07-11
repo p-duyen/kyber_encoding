@@ -1,0 +1,25 @@
+\begin{tikztimingtable}
+    [timing/d/background/.style={fill=white},
+     timing/lslope=0, font = \small]
+            CLK & L 13{T} L\\
+   
+              $\mathsf{CYCLE}$ & L 2D{0} 2D{1} 2D{2} 2D{3} 2D{4} 2D{5} 2D{0} \\
+              
+              $\mathsf{In}_B^1$ & X [fill=red!85!orange] 2D{A} [fill=red!50!orange!90!white] 2D{B} [fill = orange] 2D{C} [fill = orange!50!white] 2D{D} 6X \\
+              
+              $\mathsf{In}_A^1$ & 3X [fill=red!85!orange] 2D{A} [fill=red!50!orange!90!white]  2D{B} [fill = orange] 2D{C} [fill = orange!50!white] 2D{D} 4X \\
+              
+              $\mathsf{In}_{\oplus}^1$ & 5X [fill=red!85!orange] 2D{A} [fill=red!50!orange!90!white] 2D{B} [fill = orange] 2D{C} [fill = orange!50!white] 2D{D} 2X \\
+              
+              $\mathsf{Out^1}$ & 5X; [fill=red!85!orange] 2D{A} [fill=red!50!orange!90!white] 2D{B} [fill = orange] 2D{C} [fill = orange!50!white] 2D{D} 2X\\
+              
+              $\mathsf{In}_B^2$ & X [fill=blue!85!black] 2D{E} [fill = blue!75!green!80!white] 2X 2D{F}  [fill = green!40!blue!60!white] 2D{G} [fill = green!60!blue!60!white] 2D{H} 4X \\      
+              
+              $\mathsf{In}_A^2$ & 3X [fill=blue!85!black] 2D{E} [fill = blue!75!green!80!white] 2X 2D{F} [fill = green!40!blue!60!white] 2D{G}[fill = green!60!blue!60!white] 2D{H} 2X \\  
+              
+              $\mathsf{In}_{\oplus}^2$ & 5X [fill=blue!85!black] 2D{E} 2X  [fill = blue!75!green!80!white] 2D{F}  [fill = green!40!blue!60!white] 2D{G} [fill = green!60!blue!60!white]2D{H}X \\  
+  
+              $\mathsf{Out}^1$ & 5X; [fill=blue!85!black] 2D{E} [fill = blue!75!green!80!white] 2X 2D{F} [fill = green!40!blue!60!white] 2D{G} [fill = green!60!blue!60!white] 2D{H} X \\  
+  
+    \\
+  \end{tikztimingtable}

@@ -1,0 +1,86 @@
+\newif\ifsans
+\newif\iftext
+\newif\ifdetails
+
+%%% CONFIGURATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% preferably use build.py
+
+%\sanstrue  % for sans-serif fonts (slides, web)
+\sansfalse  % for serif fonts (article)
+
+\textfalse  % include phase description
+%\textfalse  % no phase description
+
+\detailstrue % simplify (eg, 'const' instead of 'kab0'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}[thick]
+
+
+  % --- init up to p^a ---
+  \begin{scope}[xshift=0cm]
+      \draw (0,\rate) node[left, sparsam] {$K$};
+      \draw (0,-\rate) node[left, sparsam] {$N$};
+      \draw[next] (0,\rate) -- node {\bitwidth} node[bitwidth] {$128$} (.7,\rate);
+      \draw[next] (0,-\rate) -- node {\bitwidth} node[bitwidth] {$128$} (.7,-\rate);
+
+
+    \draw (.95,0) \permdpa{a};
+  \end{scope}
+
+  % --- init after p^a and auth A1 ---
+  \begin{scope}[xshift=1.2cm]
+    %\draw[next] (0,-\rate) -- (1.15,-\rate);
+    \draw[next] (0, -\rate) -- node {\bitwidth} node [bitwidth] {$128$} + (1.7, 0);
+
+    %\draw[dashdotted] (.8,1.5) -- (.8,-1.5);
+
+    \draw (0.85,\rate) \rodpa{M1};
+    \draw[-latex] (0,\rate) -- (M1);
+    \draw[next] (M1) +(0,\msg) node[above, color = orange] {$M_1$} -- (M1);
+    \draw[next] (M1) -- (1.7,\rate);
+    \draw(M1) +(0.25, 0.2) -- (1.35, 0.7);
+
+    \draw[next] (1.35, 0.7) node at (1.35, 1.5) []{$C_1$} -- (1.35, 1.2);
+    \draw (1.95,0) \permdpa{b};
+  \end{scope}
+
+  % --- auth As ---
+  \begin{scope}[xshift=3.4cm]
+    \draw[dotted] (\minnext,\rate) -- (0.9,\rate)
+                  (\minnext,-\rate) -- (0.9,-\rate);
+
+    \draw[next] (0,\rate) -- (\minnext, \rate);
+    \draw[next] (0,-\rate) -- (\minnext, -\rate);
+    
+    \draw[next] (0.9,\rate) -- (1.3, \rate);
+    \draw[next] (0.9,-\rate) -- (1.3, -\rate);
+
+    \draw (1.55,0) \permdpa{b};
+  \end{scope}
+
+  % --- enc P1 ---
+  \begin{scope}[xshift=5.2cm]
+    %\draw[next] (0,-\rate) -- (1.15,-\rate);
+    \draw[next] (0, -\rate) -- node {\bitwidth} node [bitwidth] {$128$} + (1.9, 0);
+
+    %\draw[dashdotted] (.8,1.5) -- (.8,-1.5);
+
+    \draw (0.85,\rate) \rodpa{Mm};
+    \draw[next] (0,\rate) -- node {\bitwidth} node[bitwidth] {$128$} (Mm);
+    \draw[next] (Mm) +(0,\msg) node[above, color = orange] {$M_m$} -- (Mm);
+    \draw[next] (Mm) -- (1.9,\rate);
+    \draw (Mm) +(0.25, 0.2) -- (1.35, 0.7);
+
+    \draw[next] (1.35, 0.7) node at (1.35, 1.5) [] {$C_m$} -- (1.35, 1.2);
+    \draw (2.15,0) \permdpa{b};
+  \end{scope}
+
+  % --- enc Pt-1 ---
+  \begin{scope}[xshift=7.6cm]
+    \draw (0, \rate) -- (0.5, \rate);
+    \draw[next] (0.5, \rate) node at (0.5, 1.5) {$T$} -- (0.5, 1.2);
+
+  \end{scope}
+    
+\end{tikzpicture}

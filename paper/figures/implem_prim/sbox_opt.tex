@@ -1,0 +1,156 @@
+\begin{tikzpicture}[thick]% coordinates%\begin{}[]%\addplot coordinates {};%\end{}%\end{}
+\begin{scope}[scale=.7, every node/.style={transform shape}]
+  
+  \begin{scope}[xshift = -6cm]
+    \node [] (in) at (-.25, 0) {$\mathsf{in}$};
+    \draw [] (1, 0) \registerEn{reg1};
+    \node [] (inf) at (2.25, 0) {$\mathsf{in_{F}}$};
+    \draw [-latex] (in) -- (reg1);
+    \draw [-latex] (reg1) -- node {\bitwidth} node [bitwidth] {8} (inf);
+\end{scope}
+\begin{scope}[xshift = 3cm]
+  \draw [] (1, 0) \registerEn{reg2};
+  \node [] (outf) at (2.5, 0) {$\mathsf{out_{F}}$};
+\end{scope}
+
+
+
+  \begin{scope}[xshift = -1.5cm]
+  
+  \node [mux 4by2, thick, yscale=-.8](M1) at (0, 1.5){};
+  \node [color = red!85!orange] (in1) at (-1, .84) {$\mathsf{in_8}$};
+  \node [color = red!50!orange!90!white] (in2) at (-1, 1.28) {$\mathsf{in_3}$};
+  \node [color = orange] (in3) at (-1, 1.72) {$\mathsf{out_6}$};
+  \node [color = orange!50!white] (in4) at (-1, 2.17) {$\mathsf{out_8}$};
+  \node [] (en1b) at (0, 3.15) {$\mathsf{en_b^{b1}}$};
+  \draw [-latex] (en1b) -- node {\bitwidth} node [bitwidthvert] {2}(M1.bbpin 1);
+
+  \draw [-latex, thick, color = red!85!orange] (in1) -- (M1.blpin 1);
+  \draw [-latex, thick, color = red!50!orange!90!white] (in2) -- (M1.blpin 2);
+  \draw [-latex, thick, color = orange] (in3) -- (M1.blpin 3);
+  \draw [-latex, thick, color = orange!50!white] (in4) -- (M1.blpin 4);
+
+\end{scope}
+
+\begin{scope}[xshift = -1.5cm, yshift = 2.7cm]
+  \node [mux 4by2, thick, yscale=-.8](M2) at (0, 1.5){};
+
+  \node [color = red!85!orange] (in1) at (-1, .84) {$\mathsf{in_7}$};
+  \node [color = red!50!orange!90!white] (in2) at (-1, 1.28) {$\mathsf{in_2}$};
+  \node [color = orange] (in3) at (-1, 1.72) {$\mathsf{in_4}$};
+  \node [color = orange!50!white] (in4) at (-1, 2.17) {$\mathsf{out_7}$};
+
+  \node [] (en1a) at (0, 3.15) {$\mathsf{en_a^{b1}}$};
+  \draw [-latex] (en1a) -- node {\bitwidth} node [bitwidthvert] {2} (M2.bbpin 1);
+  \draw [-latex, thick, color = red!85!orange] (in1) -- (M2.blpin 1);
+  \draw [-latex, thick, color = red!50!orange!90!white] (in2) -- (M2.blpin 2);
+  \draw [-latex, thick, color = orange] (in3) -- (M2.blpin 3);
+  \draw [-latex, thick, color = orange!50!white] (in4) -- (M2.blpin 4);
+\end{scope}
+
+\begin{scope}[xshift = 1.5cm, yshift = 3.25cm]
+  \node [mux 4by2, thick, yscale=-1, xscale = .8, rotate = 90](M3) at (0, 1.5){};
+
+  \node [color = red!85!orange] (in1) at (-.69, 2.5) {$\mathsf{in_5}$};
+  \node [color = red!50!orange!90!white] (in2) at (-.225, 2.5) {$\mathsf{in_7}$};
+  \node [color = orange] (in3) at (.23, 2.5) {$\mathsf{in_2}$};
+  \node [color = orange!50!white] (in4) at (.69, 2.5) {$\mathsf{in_4}$};
+  \node [] (en1x) at (1.8, 1.5) {$\mathsf{en_x^{b1}}$};
+  \draw [-latex] (en1x) -- node {\bitwidth} node [bitwidth] {2} (M3.bbpin 1);
+
+  \draw [-latex, thick, color = red!85!orange] (in1) -- (M3.blpin 1);
+  \draw [-latex, thick, color = red!50!orange!90!white] (in2) -- (M3.blpin 2);
+  \draw [-latex, thick, color = orange] (in3) -- (M3.blpin 3);
+  \draw [-latex, thick, color = orange!50!white] (in4) -- (M3.blpin 4);
+\end{scope}
+\begin{scope}[xshift = 1.5cm, yshift = -6.35cm]
+  \node [mux 4by2, thick, yscale=1, xscale = .8, rotate = 90](M4) at (0, 1.5){};
+
+
+  \node [color = blue!85!black] (in1) at (-.68, .5) {$\mathsf{in_3}$};
+  \node [color = blue!75!green!80!white] (in2) at (-.225, .5) {$\mathsf{in_8}$};
+  \node [color = green!40!blue!60!white] (in3) at (.23, .5) {$\mathsf{in_6}$};
+  \node [color = green!60!blue!60!white] (in4) at (.68, .5) {$\mathsf{in_1}$};
+
+  \node [] (en1b) at (1.8, 1.5) {$\mathsf{en_x^{b2}}$};
+  \draw [-latex] (en1b) -- node {\bitwidth} node [bitwidth] {2}(M4.bbpin 1);
+  \draw [-latex, thick, color = blue!85!black] (in1) -- (M4.blpin 1);
+  \draw [-latex, thick, color = blue!75!green!80!white] (in2) -- (M4.blpin 2);
+  \draw [-latex, thick, color = green!40!blue!60!white] (in3) -- (M4.blpin 3);
+  \draw [-latex, thick, color = green!60!blue!60!white] (in4) -- (M4.blpin 4);
+\end{scope}
+\begin{scope}[xshift = -1.5cm, yshift = -5.9cm]
+  \node [mux 4by2, thick, yscale=-.8](M5) at (0, 1.5){};
+
+  \node [color = blue!85!black] (in1) at (-1, .84) {$\mathsf{in_8}$};
+  \node [color = blue!75!green!80!white] (in2) at (-1, 1.28) {$\mathsf{in_3}$};
+  \node [color = green!40!blue!60!white] (in3) at (-1, 1.72) {$\mathsf{out_6}$};
+  \node [color = green!60!blue!60!white] (in4) at (-1, 2.17) {$\mathsf{out_8}$};
+  
+  \node [] (en1b) at (0, 3.15) {$\mathsf{en_a^{b2}}$};
+  \draw [-latex] (en1b) -- node {\bitwidth} node [bitwidthvert] {2}(M5.bbpin 1);
+  \draw [-latex, thick, color = blue!85!black] (in1) -- (M5.blpin 1);
+  \draw [-latex, thick, color = blue!75!green!80!white] (in2) -- (M5.blpin 2);
+  \draw [-latex, thick, color = green!40!blue!60!white] (in3) -- (M5.blpin 3);
+  \draw [-latex, thick, color = green!60!blue!60!white] (in4) -- (M5.blpin 4);
+\end{scope}
+\begin{scope}[xshift = -1.5cm, yshift = -3.2cm]
+  \node [mux 4by2, thick, yscale=-.8](M6) at (0, 1.5){};
+
+  \node [color = blue!85!black] (in1) at (-1, .84) {$\mathsf{in_4}$};
+  \node [color = blue!75!green!80!white] (in2) at (-1, 1.28) {$\mathsf{out_7}$};
+  \node [color = green!40!blue!60!white] (in3) at (-1, 1.72) {$\mathsf{out_2}$};
+  \node [color = green!60!blue!60!white] (in4) at (-1, 2.17) {$\mathsf{out_4}$};
+  
+  \node [] (en1b) at (0, 3.15) {$\mathsf{en_b^{b2}}$};
+  \draw [-latex] (en1b) -- node {\bitwidth} node [bitwidthvert] {2}(M6.bbpin 1);
+  \draw [-latex, thick, color = blue!85!black] (in1) -- (M6.blpin 1);
+  \draw [-latex, thick, color = blue!75!green!80!white] (in2) -- (M6.blpin 2);
+  \draw [-latex, thick, color = green!40!blue!60!white] (in3) -- (M6.blpin 3);
+  \draw [-latex, thick, color = green!60!blue!60!white] (in4) -- (M6.blpin 4);
+\end{scope}
+  \begin{scope}
+  
+  \node[rectangle,
+  minimum width = .75cm,
+  minimum height = 1.75cm,
+  draw,
+  rounded corners = 2pt
+  ] (and1) at (0,1.5) {\small \textsf{\&}};
+
+  \node[rectangle,
+  minimum width = .75cm,
+  minimum height = 1.75cm,
+  draw,
+  rounded corners = 2pt
+  ] (and2) at (0,-1.7) {\small \textsf{\&}};
+
+  \draw [] (1.5, 1.5) \xord{xor1};
+  \draw [] (1.5, -1.7) \xord{xor2};
+  \node [] (outb1) at (2.5, 1.5) {$\mathsf{out_{b1}}$};
+  \node [] (outb2) at (2.5, -1.7) {$\mathsf{out_{b2}}$};
+  
+\end{scope}
+
+\draw [-latex] (M1.brpin 1) -- (and1);
+\draw [-latex] (M6.brpin 1) -- (and2);
+
+\draw [-latex] (M2.brpin 1) -| (and1);
+\draw [-latex] (M5.brpin 1) -| (and2);
+
+\draw [-latex] (M3.brpin 1) -| (xor1);
+\draw [-latex] (M4.brpin 1) -|  (xor2);
+
+\draw [-latex] (and1) -- (xor1);
+\draw [-latex] (and2) -- (xor2);
+
+\draw [-latex] (xor1) -- (outb1);
+\draw [-latex] (xor2) -- (outb2);
+
+\draw [-latex] (outb1) |- (reg2);
+\draw [-latex] (outb2) |- (reg2);
+\draw [-latex] (reg2) -- node {\bitwidth} node [bitwidth] {8} (outf);
+
+\end{scope}
+
+\end{tikzpicture}

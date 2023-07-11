@@ -1,0 +1,147 @@
+\begin{tikzpicture}[thick]
+
+    % Draw RK box
+    \draw [color = DPAblue] (2,2.1) node {RK(N)};
+	\draw[thick,dashed, color = DPAblue] (-0.6, -1) rectangle ++(5.1,2.8);
+  % --- init with IV, K ---
+  \begin{scope}[xshift=0cm]
+      \draw (0,\rate) node[left, sparsam] {$IV$};
+      \draw (0,-\rate) node[left, sparsam] {$K$};
+
+      \draw[next] (0,\rate) -- node {\bitwidth} node[bitwidth] {$192$} (.7,\rate);
+      \draw[next] (0,-\rate) -- node {\bitwidth} node[bitwidth] {$128$} (.7,-\rate);
+
+      \draw (.95,0) \permspav{k};
+  \end{scope}
+
+  % --- absorb N1 ---
+  \begin{scope}[xshift=1cm]
+    \draw[next] (0.2, -\rate) -- node {\bitwidth} node [bitwidth] {$319$} +(1.05,0);
+
+    %\draw[dashdotted] (.8,1.5) -- (.8,-1.5);
+
+    \draw (0.7,\rate) \xorspav{N1};
+    \draw[-latex] (0.2,\rate) -- (N1);
+    \draw[next] (N1) +(0,\msg) node[above] {$N(1)$} -- node {\bitwidth} node[bitwidthvert] {$1$} (N1);
+    \draw[next] (N1) -- +(0.55,0);
+
+    \draw (1.5,0) \permspav{b};
+  \end{scope}
+
+  % --- absorb Nn ---
+  \begin{scope}[xshift=2.6cm]
+    \draw[dotted] (0.2,\rate) -- (\minnext,\rate)
+                  (0.2,-\rate) -- (\minnext,-\rate);
+
+    \draw (.8,\rate) \xorspav{Nn};
+    \draw[next] (\minnext,\rate) -- (Nn);
+    \draw[next] (Nn) +(0,\msg) node[above] {$N(n)$} -- (Nn);
+    \draw[next] (Nn) -- +(0.45,0);
+
+    \draw[-latex] (\minnext,-\rate) -- (1.25,-\rate);
+
+    \draw (1.5,0) \permspav{k};
+  \end{scope}
+
+  % --- Finish nonce absorption ---
+  \begin{scope}[xshift=4.35cm]
+  
+    \draw (0.5, -\rate) node {$N$};
+    \draw[next] (0.8,-\rate) -- node {\bitwidth} node[bitwidth] {$128$} (1.25, -\rate);
+
+    %\draw[dashdotted] (.8,1.5) -- (.8,-1.5);
+
+    \draw[next] (0,\rate) -- node{\bitwidth} node [bitwidth] {$192$} (1.25, \rate);
+
+    \draw (1.5,0) \permspav{e};
+  \end{scope}
+
+  % --- enc M1 ---
+  \begin{scope}[xshift=6.1cm]
+    \draw (0,-\rate) -- (0.8, -\rate);
+
+    \draw (0,\rate) -- (0.8, \rate);
+    
+    \draw (0.6, 1.4) \xorspav{Pt1};
+    \draw[next] (0.6,\rate) -- (Pt1);
+    \draw[next] (Pt1) +(-0.4, 0) node[left, color = orange] {$M_{1}$} -- (Pt1);
+    \draw[next] (Pt1) -- +(0.4,0) node[right] {$C_{1}$};
+    
+    \draw[dotted] (0.8,\rate) -- (1.25,\rate)
+                  (0.8,-\rate) -- (1.25,-\rate);
+                  
+    \draw[next] (1.25,-\rate) -- (1.65, -\rate);
+    \draw[next] (1.25,\rate) -- (1.65, \rate);
+    
+    \draw (1.9,0) \permspav{e};
+  \end{scope}
+
+  % --- enc Mm ---
+  \begin{scope}[xshift=8.25cm]
+
+    \draw (0.7, 1.4) \xorspav{Pt1};
+    \draw[next] (0.7,\rate) -- (Pt1);
+    \draw (0, \rate) -- (0.7, \rate);
+    \draw[next] (Pt1) +(-0.4, 0) node[left, color = orange] {$M_{m}$} -- (Pt1);
+    \draw[next] (Pt1) -- +(0.4,0) node[right] {$C_{m}$};
+  \end{scope}
+
+    \begin{scope}[yshift=-3cm, xshift = 0cm]
+      \draw (0,\rate) node[left, sparsam] {$IV$};
+      \draw (0,-\rate) node[left, sparsam] {$N$};
+
+      \draw[next] (0,\rate) -- node {\bitwidth} node[bitwidth] {$192$} (.7,\rate);
+      \draw[next] (0,-\rate) -- node {\bitwidth} node[bitwidth] {$128$} (.7,-\rate);
+
+      \draw (.95,0) \perm{h};
+
+    \end{scope}
+  \begin{scope}[yshift = -3cm, xshift=1cm]
+    \draw[next] (0.2, -\rate) -- node {\bitwidth} node [bitwidth] {$256$} +(1.05,0);
+
+    %\draw[dashdotted] (.8,1.5) -- (.8,-1.5);
+
+    \draw (0.7,\rate) \xor{N1};
+    \draw[-latex] (0.2,\rate) -- (N1);
+    \draw[next] (N1) +(0,\msg) node[above] {$C_1$} -- node {\bitwidth} node[bitwidthvert] {$64$} (N1);
+    \draw[next] (N1) -- +(0.55,0);
+
+    \draw (1.5,0) \perm{h};
+  \end{scope}
+  
+    \begin{scope}[yshift = -3cm, xshift=2.6cm]
+    \draw[dotted] (0.2,\rate) -- (\minnext,\rate)
+                  (0.2,-\rate) -- (\minnext,-\rate);
+
+    \draw (.8,\rate) \xor{Nn};
+    \draw[next] (\minnext,\rate) -- (Nn);
+    \draw[next] (Nn) +(0,\msg) node[above] {$C_m$} -- (Nn);
+    \draw[next] (Nn) -- +(0.45,0);
+
+    \draw[-latex] (\minnext,-\rate) -- (1.25,-\rate);
+
+    \draw (1.5,0) \perm{h};
+  \end{scope}
+  \begin{scope}[yshift = -3cm, xshift=4.35cm]
+
+    %\draw[dashdotted] (.8,1.5) -- (.8,-1.5);
+    
+    \draw (1.8, \rate) node [rectangle, rounded corners=3pt, minimum width=.5cm, minimum height=.6cm, draw, sparsam, color = DPAblue] {$RK$};
+    
+    \draw[next] (0, \rate) -- node{\bitwidth} node [bitwidth] {$128$} (1.5, \rate);
+    \draw[next] (0, -\rate) -- node{\bitwidth} node [bitwidth] {$192$} (3.4, -\rate);
+
+  \end{scope}
+  \begin{scope}[yshift=-3cm, xshift=6.1cm]
+  
+    \draw[next] (.4,\rate) -- (1.65, \rate);
+    
+    \draw (1.9,0) \perm{h};
+  \end{scope}
+  \begin{scope}[yshift=-3cm, xshift=8.25cm]
+    \draw (0,\rate) -- (0.7, \rate);
+    \draw[next] (0.7,\rate) -- node {\bitwidth} node [bitwidthvert] {$128$} (0.7, 1.2);
+    \draw (0.7, 1.4)  node {$T$};
+  \end{scope}
+
+\end{tikzpicture}

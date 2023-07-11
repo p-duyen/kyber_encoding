@@ -1,0 +1,61 @@
+\begin{tikzpicture}[]
+    \node [] (in1) at (-.6, 2.25) {$\mathsf{in_0}$};
+    \node [] (in0) at (0, 2.25) {$\mathsf{in_1}$};
+    \node [] (o1) at (-.8, -5.5) {$\mathsf{out_0}$};
+    \node [] (o0) at (.8, -5.5) {$\mathsf{out_1}$};
+\begin{scope}[scale=.8, every node/.style={transform shape}]
+    
+    \node[rectangle,
+    latency,
+    minimum width = 1cm,
+    minimum height = 1cm,
+    draw] (B1) at (-1,-2) {\textsf{B}};
+
+    \draw [thick] (0, 1.25) \registerrot{reg1};
+    \draw [thick] (-1, -5.5) \registerrot{reg2};
+
+    \node[rectangle,
+    latency,
+    minimum width = 1cm,
+    minimum height = 1cm,
+    draw,
+    ] (B2) at (1,-2) {\textsf{B}};
+
+    \node [mux 3by2, rotate = 270, thick](M1) at (0, 0){};
+
+    \node[rectangle,
+    minimum width = 1cm,
+    rounded corners = 3pt,
+    thick,
+    minimum height = .5cm,
+    draw] (ws1) at (0, -4) {\footnotesize \textsf{Wire shuffling 2}};
+
+    \node[rectangle,
+    minimum width = 1cm,
+    rounded corners = 3pt,
+    thick,
+    minimum height = .5cm,
+    draw] (ws2) at (3,-1) {\footnotesize \textsf{Wire shuffling 1}};
+
+    \draw [thick, -latex] (0, -3.25) -| (ws2);
+    \draw [thick] (M1.brpin 1) -- node {\bitwidth} node [bitwidthvert] {8} (0, -1);
+    \draw [-latex, thick] (reg1) -- (M1.blpin 2);
+    \draw [-latex, thick] (in1) -- node {\bitwidth} node [bitwidthvert] {8} (M1.blpin 3);
+
+    \draw [-latex, thick] (in0) -- node {\bitwidth} node [bitwidthvert] {8} (reg1);
+    \draw [-latex] (0, -1) -| (B1);
+    \draw [-latex] (0, -1) -| (B2);
+    \draw [] (B1) |- (0, -3);
+    \draw [] (B2) |- (0, -3);
+    \draw [thick, -latex] (0, -3) -- (ws1);
+    \draw [thick] (ws2) |- (.75,1.25);
+    \draw [thick, -latex] (.75, 1.25) -- node {\bitwidth} node [bitwidthvert] {8} (M1.blpin 1);
+
+    \draw [thick] (ws1) -- node {\bitwidth} node [bitwidthvert] {8} (0, -4.75);
+    \draw [-latex, thick] (0,-4.75) -| (reg2);
+
+    \draw [-latex, thick] (0, -4.75) -| (o0);
+    \draw [-latex, thick] (reg2) -- (o1);
+\end{scope}
+
+\end{tikzpicture}

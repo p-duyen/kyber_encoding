@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+    \node [mux 2by2] (mux1) at (-.5, 0){};
+    \node [mux 2by2] (mux2) at (2.5, -.4){};
+
+    \node [rectangle, minimum width=1.2cm, minimum height=1.2cm, draw, sparsam, thick, name=pidpa] at (1, 0) {$\pi_{DPA}$};
+    \node [rectangle, minimum width=1.2cm, minimum height=1.2cm, draw, sparsam, thick, name=pispa] at (4, -.4) {$\pi_{SPA}$};
+
+    \node (iv) at (-2.5, .4) {\small{$IV||K||N$}};
+    \draw [-latex] (iv) -- (mux1.blpin 1);
+    \draw [-latex] (mux1.brpin 1) -- (pidpa);
+    \draw [-latex] (pidpa) -- (mux2.blpin 1);
+    \draw [-latex] (mux2.brpin 1) -- (pispa);
+    \draw [] (4.9, -.4) |- (1.9,-2);
+    \draw [-latex] (1.9, -2) |- (mux2.blpin 2);
+    \draw [-latex] (1.9, -2) |- (mux2.blpin 2);
+
+    \draw (5.3,-.4) \xor{xor1};
+
+    \draw [-latex] (pispa) -- (xor1);
+    \node (m) at (5.3, .4) {\small{$M_i$}};
+    \node (c) at (5.3, -1.3) {\small{$C_i$}};
+    \draw [-latex] (m) -- (xor1);
+    \draw [-latex] (xor1) -- (c);
+
+    \node (t) at (1.9, 1.5) {\small{$T$}};
+    \draw[-latex] (1.9,0) -- (t);
+
+\end{tikzpicture}
