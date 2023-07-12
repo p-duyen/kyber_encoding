@@ -1,22 +1,16 @@
-@inproceedings{DBLP:conf/crypto/BelliziaBCGGMPP20,
-  author    = {Davide Bellizia and
-               Olivier Bronchain and
-               Ga{\"{e}}tan Cassiers and
-               Vincent Grosso and
-               Chun Guo and
-               Charles Momin and
-               Olivier Pereira and
-               Thomas Peters and
-               Fran{\c{c}}ois{-}Xavier Standaert},
-  title     = {Mode-Level vs. Implementation-Level Physical Security in Symmetric
-               Cryptography - {A} Practical Guide Through the Leakage-Resistance
-               Jungle},
-  booktitle = {{CRYPTO} {(1)}},
-  series    = {Lecture Notes in Computer Science},
-  volume    = {12170},
-  pages     = {369--400},
-  publisher = {Springer},
-  year      = {2020}
+@InProceedings{Prouff13,
+	author="Prouff, Emmanuel
+	and Rivain, Matthieu",
+	editor="Johansson, Thomas
+	and Nguyen, Phong Q.",
+	title="Masking against Side-Channel Attacks: A Formal Security Proof",
+	booktitle="Advances in Cryptology -- EUROCRYPT 2013",
+	year="2013",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="142--159",
+	abstract="Masking is a well-known countermeasure to protect block cipher implementations against side-channel attacks. The principle is to randomly split every sensitive intermediate variable occurring in the computation into d{\thinspace}+{\thinspace}1 shares, where d is called the masking order and plays the role of a security parameter. Although widely used in practice, masking is often considered as an empirical solution and its effectiveness is rarely proved. In this paper, we provide a formal security proof for masked implementations of block ciphers. Specifically, we prove that the information gained by observing the leakage from one execution can be made negligible (in the masking order). To obtain this bound, we assume that every elementary calculation in the implementation leaks a noisy function of its input, where the amount of noise can be chosen by the designer (yet linearly bounded). We further assume the existence of a leak-free component that can refresh the masks of shared variables. Our work can be viewed as an extension of the seminal work of Chari et al.published at CRYPTO in 1999 on the soundness of combining masking with noise to thwart side-channel attacks.",
+	isbn="978-3-642-38348-9"
 }
 
 @article{DBLP:journals/tc/CassiersGLS21,

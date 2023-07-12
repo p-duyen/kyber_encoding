@@ -1,46 +1,57 @@
 This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: CARDIS_lightweight.aux
+White space in argument---line 19 of file CARDIS_lightweight.aux
+ : \citation{SPA
+ :               attacks}
+I'm skipping whatever remains of this command
+White space in argument---line 21 of file CARDIS_lightweight.aux
+ : \citation{Provable
+ :                    proof for Boolean masking and arithmetic masking}
+I'm skipping whatever remains of this command
 The style file: alpha.bst
 Database file #1: refs.bib
-You've used 26 entries,
+Warning--I didn't find a database entry for "DPA"
+Warning--I didn't find a database entry for "IT"
+You've used 1 entry,
             2543 wiz_defined-function locations,
-            728 strings with 10749 characters,
-and the built_in function-call counts, 13891 in all, are:
-= -- 1394
-> -- 799
-< -- 21
-+ -- 297
-- -- 297
-* -- 1133
-:= -- 2232
-add.period$ -- 89
-call.type$ -- 26
-change.case$ -- 212
-chr.to.int$ -- 26
-cite$ -- 26
-duplicate$ -- 502
-empty$ -- 922
-format.name$ -- 318
-if$ -- 2853
+            572 strings with 4717 characters,
+and the built_in function-call counts, 613 in all, are:
+= -- 63
+> -- 27
+< -- 1
++ -- 8
+- -- 8
+* -- 40
+:= -- 100
+add.period$ -- 4
+call.type$ -- 1
+change.case$ -- 6
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 26
+empty$ -- 44
+format.name$ -- 9
+if$ -- 134
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 134
-num.names$ -- 78
-pop$ -- 188
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 5
+pop$ -- 7
 preamble$ -- 1
-purify$ -- 238
+purify$ -- 7
 quote$ -- 0
-skip$ -- 422
+skip$ -- 26
 stack$ -- 0
-substring$ -- 764
-swap$ -- 145
-text.length$ -- 21
-text.prefix$ -- 1
+substring$ -- 39
+swap$ -- 10
+text.length$ -- 1
+text.prefix$ -- 0
 top$ -- 0
-type$ -- 208
+type$ -- 8
 warning$ -- 0
-while$ -- 130
-width$ -- 29
-write$ -- 358
+while$ -- 7
+width$ -- 2
+write$ -- 17
+(There were 2 error messages)

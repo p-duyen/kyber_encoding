@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  11 JUL 2023 18:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JUL 2023 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1265,8 +1265,33 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count418
 \@lastruleclass=\count419
 \@thisrulewidth=\dimen371
-))
-(./notation.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fixme/fixme.sty
+Package: fixme 2019/01/03 v4.5 Collaborative annotations for LaTeX2e
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks52
+\verbatim@line=\toks53
+\verbatim@in@stream=\read3
+)
+\lox@file=\read4
+\c@fixmecount=\count420
+\c@fxnotecount=\count421
+\c@fxwarningcount=\count422
+\c@fxerrorcount=\count423
+\c@fxfatalcount=\count424
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fixme/themes/fxthemecolor.sty
+Package: fxthemecolor 
+
+(/usr/share/texlive/texmf-dist/tex/latex/fixme/layouts/env/fxenvlayoutcolor.sty
+Package: fxenvlayoutcolor 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fixme/layouts/target/fxtargetlayoutcol
+or.sty
+Package: fxtargetlayoutcolor 
+))) (./notation.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -1316,17 +1341,17 @@ File: fc-english.def 2016/01/12
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count420
+\scratchcounter=\count425
 \scratchdimen=\dimen373
 \scratchbox=\box130
-\nofMPsegments=\count421
-\nofMParguments=\count422
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count423
+\nofMPsegments=\count426
+\nofMParguments=\count427
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count428
 \MPscratchDim=\dimen374
-\MPnumerator=\count424
-\makeMPintoPDFobject=\count425
-\everyMPtoPDFconversion=\toks53
+\MPnumerator=\count429
+\makeMPintoPDFobject=\count430
+\everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1347,7 +1372,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count426
+\c@section@level=\count431
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -1402,15 +1427,64 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 22.
 
-Package caption Warning: Unused \captionsetup[sub] on input line 31.
-See the caption package documentation for explanation.
+
+FiXme Warning: 'citation' on input line 22.
+
+
+FiXme Warning: 'citation' on input line 22.
+
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 22.
+
+FiXme Warning: 'cite Provable proof for Boolean masking and arithmetic masking'
+ on input line 23.
+
+
+LaTeX Warning: Marginpar on page 1 moved.
 
 [1
 Non-PDF special ignored!
 <special> papersize=614.295pt,794.96999pt
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./CARDIS_lightweight.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+FiXme Warning: 'Double check and add citation' on input line 53.
+
+[2]
+
+FiXme Warning: 'citations' on input line 67.
+
+
+FiXme Warning: 'Kyber algo citation' on input line 73.
+
+
+Overfull \hbox (47.65222pt too wide) detected at line 86
+[]
+ []
+
+[3]
+
+FiXme Warning: 'IT citation' on input line 99.
+
+
+FiXme Warning: 'citation' on input line 110.
+
+[4] (./CARDIS_lightweight.bbl)
+
+Package caption Warning: Unused \captionsetup[sub] on input line 31.
+See the caption package documentation for explanation.
+
+
+FiXme Summary: Number of notes: 0,
+(FiXme)        Number of warnings: 8,
+(FiXme)        Number of errors: 0,
+(FiXme)        Number of fatal errors: 0,
+(FiXme)        Total: 8.
+
+[5] (./CARDIS_lightweight.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1418,21 +1492,36 @@ Package rerunfilecheck Info: File `CARDIS_lightweight.out' has not changed.
 (rerunfilecheck)             Checksum: DD5003924A375F99292E066E8A15B561;1048.
  ) 
 Here is how much of TeX's memory you used:
- 56209 strings out of 478287
- 1420934 string characters out of 5849289
- 2055198 words of memory out of 5000000
- 73609 multiletter control sequences out of 15000+600000
- 476957 words of font info for 60 fonts, out of 8000000 for 9000
+ 56937 strings out of 478287
+ 1435891 string characters out of 5849289
+ 2073198 words of memory out of 5000000
+ 74288 multiletter control sequences out of 15000+600000
+ 477953 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,5n,120p,768b,756s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on CARDIS_lightweight.pdf (1 page, 49651 bytes).
+ 104i,11n,120p,800b,925s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on CARDIS_lightweight.pdf (5 pages, 247534 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
