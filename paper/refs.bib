@@ -13,19 +13,153 @@
 	isbn="978-3-642-38348-9"
 }
 
-@article{DBLP:journals/tc/CassiersGLS21,
-  author    = {Ga{\"{e}}tan Cassiers and
-               Benjamin Gr{\'{e}}goire and
-               Itamar Levi and
-               Fran{\c{c}}ois{-}Xavier Standaert},
-  title     = {Hardware Private Circuits: From Trivial Composition to Full Verification},
-  journal   = {{IEEE} Trans. Computers},
-  volume    = {70},
-  number    = {10},
-  pages     = {1677--1690},
-  year      = {2021}
+@article{LDAKojo,
+	title = {Linear classifier design under heteroscedasticity in Linear Discriminant Analysis},
+	journal = {Expert Systems with Applications},
+	volume = {79},
+	pages = {44-52},
+	year = {2017},
+	issn = {0957-4174},
+	doi = {https://doi.org/10.1016/j.eswa.2017.02.039},
+	url = {https://www.sciencedirect.com/science/article/pii/S0957417417301306},
+	author = {Kojo Sarfo Gyamfi and James Brusey and Andrew Hunt and Elena Gaura},
+	keywords = {LDA, Heteroscedasticity, Bayes error, Linear classifier},
+	abstract = {Under normality and homoscedasticity assumptions, Linear Discriminant Analysis (LDA) is known to be optimal in terms of minimising the Bayes error for binary classification. In the heteroscedastic case, LDA is not guaranteed to minimise this error. Assuming heteroscedasticity, we derive a linear classifier, the Gaussian Linear Discriminant (GLD), that directly minimises the Bayes error for binary classification. In addition, we also propose a local neighbourhood search (LNS) algorithm to obtain a more robust classifier if the data is known to have a non-normal distribution. We evaluate the proposed classifiers on two artificial and ten real-world datasets that cut across a wide range of application areas including handwriting recognition, medical diagnosis and remote sensing, and then compare our algorithm against existing LDA approaches and other linear classifiers. The GLD is shown to outperform the original LDA procedure in terms of the classification accuracy under heteroscedasticity. While it compares favourably with other existing heteroscedastic LDA approaches, the GLD requires as much as 60 times lower training time on some datasets. Our comparison with the support vector machine (SVM) also shows that, the GLD, together with the LNS, requires as much as 150 times lower training time to achieve an equivalent classification accuracy on some of the datasets. Thus, our algorithms can provide a cheap and reliable option for classification in a lot of expert systems.}
+}
+@misc{DNN,
+	author = {Loïc Masure and Cécile Dumas and Emmanuel Prouff},
+	title = {A Comprehensive Study of Deep Learning for Side-Channel Analysis},
+	howpublished = {Cryptology ePrint Archive, Paper 2019/439},
+	year = {2019},
+	note = {\url{https://eprint.iacr.org/2019/439}},
+	url = {https://eprint.iacr.org/2019/439}
 }
 
+@ARTICLE{distinguishers,
+	author={Bronchain, Olivier and Durvaux, François and Masure, Loïc and Standaert, François-Xavier},
+	journal={IEEE Transactions on Information Forensics and Security}, 
+	title={Efficient Profiled Side-Channel Analysis of Masked Implementations, Extended}, 
+	year={2022},
+	volume={17},
+	number={},
+	pages={574-584},
+	doi={10.1109/TIFS.2022.3144871}}
+@misc{primemask,
+	author = {Loïc Masure and Pierrick Méaux and Thorben Moos and François-Xavier Standaert},
+	title = {Effective and Efficient Masking with Low Noise using Small-Mersenne-Prime Ciphers},
+	howpublished = {Cryptology ePrint Archive, Paper 2022/863},
+	year = {2022},
+	note = {\url{https://eprint.iacr.org/2022/863}},
+	url = {https://eprint.iacr.org/2022/863}
+}
+
+@InProceedings{2dpa,
+	author="Standaert, Fran{\c{c}}ois-Xavier
+	and Veyrat-Charvillon, Nicolas
+	and Oswald, Elisabeth
+	and Gierlichs, Benedikt
+	and Medwed, Marcel
+	and Kasper, Markus
+	and Mangard, Stefan",
+	editor="Abe, Masayuki",
+	title="The World Is Not Enough: Another Look on Second-Order DPA",
+	booktitle="Advances in Cryptology - ASIACRYPT 2010",
+	year="2010",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="112--129",
+	abstract="In a recent work, Mangard et al. showed that under certain assumptions, the (so-called) standard univariate side-channel attacks using a distance-of-means test, correlation analysis and Gaussian templates are essentially equivalent. In this paper, we show that in the context of multivariate attacks against masked implementations, this conclusion does not hold anymore. While a single distinguisher can be used to compare the susceptibility of different unprotected devices to first-order DPA, understanding second-order attacks requires to carefully investigate the information leakages and the adversaries exploiting these leakages, separately. Using a framework put forward by Standaert et al. at Eurocrypt 2009, we provide the first analysis that explores these two topics in the case of a masked implementation exhibiting a Hamming weight leakage model. Our results lead to refined intuitions regarding the efficiency of various practically-relevant distinguishers. Further, we also investigate the case of second- and third-order masking (i.e. using three and four shares to represent one value). This evaluation confirms that higher-order masking only leads to significant security improvements if the secret sharing is combined with a sufficient amount of noise. Eventually, we show that an information theoretic analysis allows determining this necessary noise level, for different masking schemes and target security levels, with high accuracy and smaller data complexity than previous methods.",
+	isbn="978-3-642-17373-8"
+}
+
+@InProceedings{optimalmask,
+	author="Dziembowski, Stefan
+	and Faust, Sebastian
+	and Sk{\'o}rski, Maciej",
+	editor="Kushilevitz, Eyal
+	and Malkin, Tal",
+	title="Optimal Amplification of Noisy Leakages",
+	booktitle="Theory of Cryptography",
+	year="2016",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="291--318",
+	abstract="During the last 15 years there have been intensive research efforts in constructing cryptographic algorithms resilient to the side-channel leakage. The most fundamental part of every such construction are the leakage-resilient encoding schemes. Usually the cryptographic secrets encoded by them are assumed to belong to some finite group {\$}{\$}({\backslash}mathbb {\{}G{\}},+){\$}{\$}(G,+). The most common encoding scheme is the n-out-of-n additive secret sharing: a secret X is encoded as {\$}{\$}(X{\_}1,{\backslash}ldots ,X{\_}n){\$}{\$}(X1,{\ldots},Xn)such that {\$}{\$}X{\_}1 + {\backslash}cdots X{\_}n = X{\$}{\$}X1+⋯Xn=X. Intuitively, if an adversary receives only small partial independent information about each {\$}{\$}X{\_}i{\$}{\$}Xithen his information about X should be even smaller, and should decrease (i.e. the noise should amplify) when n grows. However, of course, the concrete parameters (the amount of leakage that can be tolerated, and the number of shares needed to achieve a given level of security) depend on the exact model that is used.",
+	isbn="978-3-662-49099-0"
+}
+@article{mivsna,
+	author = {Duc, Alexandre and Faust, Sebastian and Standaert, François-Xavier},
+	year = {2018},
+	month = {01},
+	pages = {},
+	title = {Making Masking Security Proofs Concrete (Or How to Evaluate the Security of Any Leaking Device), Extended Version},
+	volume = {32},
+	journal = {Journal of Cryptology},
+	doi = {10.1007/s00145-018-9277-0}
+}
+@article{mivsna2,
+	author = {Chérisey, Eloi and Guilley, Sylvain and Piantanida, Pablo and Rioul, Olivier},
+	year = {2019},
+	month = {02},
+	pages = {},
+	title = {Best Information is Most Successful: Mutual Information and Success Rate in Side-Channel Analysis},
+	journal = {IACR Transactions on Cryptographic Hardware and Embedded Systems},
+	doi = {10.46586/tches.v2019.i2.49-79}
+}
+
+@misc{lcert,
+	author = {Olivier Bronchain and Julien M.  Hendrickx and Clément Massart and Alex Olshevsky and François-Xavier Standaert},
+	title = {Leakage Certification Revisited: Bounding Model Errors in Side-Channel Security Evaluations},
+	howpublished = {Cryptology ePrint Archive, Paper 2019/132},
+	year = {2019},
+	note = {\url{https://eprint.iacr.org/2019/132}},
+	url = {https://eprint.iacr.org/2019/132}
+}
+@inproceedings{sasca,
+	author = {Veyrat-Charvillon, Nicolas and Gérard, Benoît and Standaert, François-Xavier},
+	year = {2014},
+	month = {12},
+	pages = {},
+	title = {Soft Analytical Side-Channel Attacks},
+	isbn = {978-3-662-45607-1},
+	doi = {10.1007/978-3-662-45611-8_15}
+}
+
+@article{mshares, 
+	title={Breaking Masked Implementations with Many Shares on 32-bit Software Platforms: or When the Security Order Does Not Matter}, 
+	volume={2021}, url={https://tches.iacr.org/index.php/TCHES/article/view/8973}, DOI={10.46586/tches.v2021.i3.202-234}, 
+	 number={3}, journal={IACR Transactions on Cryptographic Hardware and Embedded Systems}, author={Bronchain, Olivier and Standaert, François-Xavier}, year={2021}, month={Jul.}, pages={202–234} }
+ 
+ @article{Kmask1, title={Practical CCA2-Secure and Masked Ring-LWE Implementation}, 
+ 	volume={2018}, url={https://tches.iacr.org/index.php/TCHES/article/view/836}, DOI={10.13154/tches.v2018.i1.142-174}, 
+ 	 number={1}, journal={IACR Transactions on Cryptographic Hardware and Embedded Systems}, author={Oder, Tobias and Schneider, Tobias and Pöppelmann, Thomas and Güneysu, Tim}, year={2018}, month={Feb.}, pages={142–174} }
+  
+  
+ @misc{Kmaskimp0,
+ 	author = {Olivier Bronchain and Gaëtan Cassiers},
+ 	title = {Bitslicing Arithmetic/Boolean Masking Conversions for Fun and Profit with Application to Lattice-Based KEMs},
+ 	howpublished = {Cryptology ePrint Archive, Paper 2022/158},
+ 	year = {2022},
+ 	note = {\url{https://eprint.iacr.org/2022/158}},
+ 	url = {https://eprint.iacr.org/2022/158}
+ }
+ @misc{Kmaskimp1,
+ 	author = {Daniel Heinz and Matthias J.  Kannwischer and Georg Land and Thomas Pöppelmann and Peter Schwabe and Daan Sprenkels},
+ 	title = {First-Order Masked Kyber on ARM Cortex-M4},
+ 	howpublished = {Cryptology ePrint Archive, Paper 2022/058},
+ 	year = {2022},
+ 	note = {\url{https://eprint.iacr.org/2022/058}},
+ 	url = {https://eprint.iacr.org/2022/058}
+ }
+@misc{Kmaskimp2,
+	author = {Jan-Pieter D'Anvers and Daniel Heinz and Peter Pessl and Michiel van Beirendonck and Ingrid Verbauwhede},
+	title = {Higher-Order Masked Ciphertext Comparison for Lattice-Based Cryptography},
+	howpublished = {Cryptology ePrint Archive, Paper 2021/1422},
+	year = {2021},
+	doi = {10.46586/tches.v2022.i2.115-139},
+	note = {\url{https://eprint.iacr.org/2021/1422}},
+	url = {https://eprint.iacr.org/2021/1422}
+}
 @article{DBLP:journals/tches/CassiersS21,
   author    = {Ga{\"{e}}tan Cassiers and
                Fran{\c{c}}ois{-}Xavier Standaert},

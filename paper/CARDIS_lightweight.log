@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JUL 2023 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  3 AUG 2023 11:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1427,20 +1427,20 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
-line 22.
-
-
-FiXme Warning: 'citation' on input line 22.
-
-
-FiXme Warning: 'citation' on input line 22.
-
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 22.
+ine 21.
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 25.
+
+
+FiXme Warning: 'citation' on input line 25.
+
+
+FiXme Warning: 'citation' on input line 25.
+
 
 FiXme Warning: 'cite Provable proof for Boolean masking and arithmetic masking'
- on input line 23.
+ on input line 26.
 
 
 LaTeX Warning: Marginpar on page 1 moved.
@@ -1451,77 +1451,215 @@ Non-PDF special ignored!
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-FiXme Warning: 'Double check and add citation' on input line 53.
+FiXme Warning: 'citations' on input line 59.
+
+
+FiXme Warning: 'citations' on input line 59.
+
+FiXme Note: 'wording' on input line 59.
+
+FiXme Warning: 'Double check and add citation' on input line 66.
 
 [2]
 
-FiXme Warning: 'citations' on input line 67.
+FiXme Warning: 'citations' on input line 80.
 
 
-FiXme Warning: 'Kyber algo citation' on input line 73.
-
-
-Overfull \hbox (47.65222pt too wide) detected at line 86
-[]
- []
+FiXme Warning: 'Kyber algo citation' on input line 86.
 
 [3]
 
-FiXme Warning: 'IT citation' on input line 99.
+FiXme Warning: 'IT citation' on input line 121.
+
+[4]
+
+FiXme Warning: 'wording' on input line 154.
+
+[5]
+
+LaTeX Warning: Reference `eg:f2p' on page 6 undefined on input line 166.
 
 
-FiXme Warning: 'citation' on input line 110.
-
-[4] (./CARDIS_lightweight.bbl)
-
-Package caption Warning: Unused \captionsetup[sub] on input line 31.
-See the caption package documentation for explanation.
+FiXme Warning: 'LDA in SCA citations' on input line 175.
 
 
-FiXme Summary: Number of notes: 0,
-(FiXme)        Number of warnings: 8,
+FiXme Warning: 'few citations' on input line 180.
+
+[6]
+FiXme Note: 'wording' on input line 188.
+
+Overfull \hbox (7.27594pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 written as the con-vo-lu-tion of each share leak-age com-po-nen
+t. Pre-cisely, if $[][](\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ) =
+ []
+
+[7]
+
+FiXme Warning: 'citations' on input line 220.
+
+
+Overfull \hbox (21.28136pt too wide) in paragraph at lines 222--223
+\OT1/cmr/m/n/10 as $(\OML/cmm/m/it/10 X[]; X[]; [] ; X[]\OT1/cmr/m/n/10 )$, is 
+a vec-tor $\OML/cmm/b/it/10 L \OT1/cmr/m/n/10 = []$,
+ []
+
+[8]
+
+FiXme Warning: 'citations' on input line 230.
+
+<figures/5_dist_sum.png, id=171, 1868.9825pt x 489.83pt>
+File: figures/5_dist_sum.png Graphic file (type png)
+<use figures/5_dist_sum.png>
+Package pdftex.def Info: figures/5_dist_sum.png  used on input line 241.
+(pdftex.def)             Requested size: 341.43306pt x 89.48105pt.
+FiXme Note: 'wording' on input line 246.
+<figures/3329_dist_modes.png, id=176, 1387.584pt x 723.4227pt>
+File: figures/3329_dist_modes.png Graphic file (type png)
+<use figures/3329_dist_modes.png>
+Package pdftex.def Info: figures/3329_dist_modes.png  used on input line 253.
+(pdftex.def)             Requested size: 346.89514pt x 180.85522pt.
+[9 <./figures/5_dist_sum.png>]
+<figures/mi_234.png, id=189, 1170.3725pt x 862.22125pt>
+File: figures/mi_234.png Graphic file (type png)
+<use figures/mi_234.png>
+Package pdftex.def Info: figures/mi_234.png  used on input line 262.
+(pdftex.def)             Requested size: 163.85103pt x 120.71014pt.
+<figures/mi_lines_modes.png, id=190, 973.6375pt x 778.91pt>
+File: figures/mi_lines_modes.png Graphic file (type png)
+<use figures/mi_lines_modes.png>
+Package pdftex.def Info: figures/mi_lines_modes.png  used on input line 266.
+(pdftex.def)             Requested size: 155.78517pt x 124.62814pt.
+
+Overfull \hbox (2.05554pt too wide) in paragraph at lines 261--270
+[]$[]$ $[]$
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./figures/3329_dist_modes.png>]
+<figures/4shares_modes.png, id=205, 1345.6674pt x 703.9098pt>
+File: figures/4shares_modes.png Graphic file (type png)
+<use figures/4shares_modes.png>
+Package pdftex.def Info: figures/4shares_modes.png  used on input line 287.
+(pdftex.def)             Requested size: 269.12871pt x 140.77946pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+FiXme Note: 'more citations' on input line 299.
+[11 <./figures/mi_234.png> <./figures/mi_lines_modes.png>] [12 <./figures/4shar
+es_modes.png>]
+<figures/pi_mlps.png, id=244, 849.1725pt x 646.0938pt>
+File: figures/pi_mlps.png Graphic file (type png)
+<use figures/pi_mlps.png>
+Package pdftex.def Info: figures/pi_mlps.png  used on input line 333.
+(pdftex.def)             Requested size: 254.75371pt x 193.82964pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figures/5_dist_sum.png Graphic file (type png)
+<use figures/5_dist_sum.png>
+Package pdftex.def Info: figures/5_dist_sum.png  used on input line 345.
+(pdftex.def)             Requested size: 373.78989pt x 97.96426pt.
+
+Overfull \hbox (26.66635pt too wide) in paragraph at lines 345--346
+ [][] 
+ []
+
+<figures/5_dist_diff.png, id=245, 1868.9825pt x 490.83376pt>
+File: figures/5_dist_diff.png Graphic file (type png)
+<use figures/5_dist_diff.png>
+Package pdftex.def Info: figures/5_dist_diff.png  used on input line 352.
+(pdftex.def)             Requested size: 373.78989pt x 98.16501pt.
+
+Overfull \hbox (26.66635pt too wide) in paragraph at lines 352--353
+[][] 
+ []
+
+<figures/11_dist_sum.png, id=246, 1345.6674pt x 703.9098pt>
+File: figures/11_dist_sum.png Graphic file (type png)
+<use figures/11_dist_sum.png>
+Package pdftex.def Info: figures/11_dist_sum.png  used on input line 362.
+(pdftex.def)             Requested size: 336.41603pt x 175.97702pt.
+<figures/11_dist_diff.png, id=247, 1345.6674pt x 703.9098pt>
+File: figures/11_dist_diff.png Graphic file (type png)
+<use figures/11_dist_diff.png>
+Package pdftex.def Info: figures/11_dist_diff.png  used on input line 371.
+(pdftex.def)             Requested size: 336.41603pt x 175.97702pt.
+<figures/MI_23_234.png, id=252, 1089.06876pt x 825.0825pt>
+File: figures/MI_23_234.png Graphic file (type png)
+<use figures/MI_23_234.png>
+Package pdftex.def Info: figures/MI_23_234.png  used on input line 382.
+(pdftex.def)             Requested size: 341.43306pt x 258.66856pt.
+<figures/snr_2shares.png, id=253, 1212.53pt x 911.405pt>
+File: figures/snr_2shares.png Graphic file (type png)
+<use figures/snr_2shares.png>
+Package pdftex.def Info: figures/snr_2shares.png  used on input line 388.
+(pdftex.def)             Requested size: 341.43306pt x 256.63797pt.
+(./CARDIS_lightweight.bbl [13]
+Underfull \hbox (badness 10000) in paragraph at lines 69--74
+[]\OT1/cmr/m/n/9 Daniel Heinz, Matthias J. Kan-nwis-cher, Georg Land, Thomas
+ []
+
+[14 <./figures/pi_mlps.png>])
+
+FiXme Summary: Number of notes: 4,
+(FiXme)        Number of warnings: 14,
 (FiXme)        Number of errors: 0,
 (FiXme)        Number of fatal errors: 0,
-(FiXme)        Total: 8.
+(FiXme)        Total: 18.
 
-[5] (./CARDIS_lightweight.aux)
+[15 <./figures/5_dist_diff.png>] [16 <./figures/11_dist_sum.png> <./figures/11_
+dist_diff.png>] [17 <./figures/MI_23_234.png>] [18 <./figures/snr_2shares.png>]
+(./CARDIS_lightweight.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `CARDIS_lightweight.out' has not changed.
-(rerunfilecheck)             Checksum: DD5003924A375F99292E066E8A15B561;1048.
+(rerunfilecheck)             Checksum: D117EE2AD950DD4A9FA837B071FE78C1;1548.
  ) 
 Here is how much of TeX's memory you used:
- 56937 strings out of 478287
- 1435891 string characters out of 5849289
- 2073198 words of memory out of 5000000
- 74288 multiletter control sequences out of 15000+600000
- 477953 words of font info for 63 fonts, out of 8000000 for 9000
+ 57293 strings out of 478287
+ 1442245 string characters out of 5849289
+ 2087666 words of memory out of 5000000
+ 74545 multiletter control sequences out of 15000+600000
+ 483410 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,11n,120p,800b,925s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 104i,12n,120p,800b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on CARDIS_lightweight.pdf (5 pages, 247534 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmext
+ra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+tt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
+.pfb>
+Output written on CARDIS_lightweight.pdf (18 pages, 1227988 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 334 compressed objects within 4 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 
