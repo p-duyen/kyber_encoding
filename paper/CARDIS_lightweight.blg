@@ -3,46 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: CARDIS_lightweight.aux
 The style file: alpha.bst
 Database file #1: refs.bib
+Warning--empty booktitle in kyber
+Warning--empty publisher in menc1
 Warning--empty booktitle in sasca
-You've used 16 entries,
+You've used 29 entries,
             2543 wiz_defined-function locations,
-            661 strings with 8081 characters,
-and the built_in function-call counts, 7452 in all, are:
-= -- 724
-> -- 487
-< -- 3
-+ -- 179
-- -- 177
-* -- 559
-:= -- 1269
-add.period$ -- 57
-call.type$ -- 16
-change.case$ -- 125
-chr.to.int$ -- 16
-cite$ -- 17
-duplicate$ -- 236
-empty$ -- 469
-format.name$ -- 189
-if$ -- 1501
+            729 strings with 11141 characters,
+and the built_in function-call counts, 13948 in all, are:
+= -- 1330
+> -- 932
+< -- 8
++ -- 348
+- -- 343
+* -- 1070
+:= -- 2352
+add.period$ -- 103
+call.type$ -- 29
+change.case$ -- 240
+chr.to.int$ -- 29
+cite$ -- 32
+duplicate$ -- 433
+empty$ -- 877
+format.name$ -- 362
+if$ -- 2812
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 90
-num.names$ -- 54
-pop$ -- 134
+missing$ -- 18
+newline$ -- 161
+num.names$ -- 93
+pop$ -- 272
 preamble$ -- 1
-purify$ -- 141
+purify$ -- 270
 quote$ -- 0
-skip$ -- 220
+skip$ -- 398
 stack$ -- 0
-substring$ -- 300
-swap$ -- 43
-text.length$ -- 3
-text.prefix$ -- 0
+substring$ -- 571
+swap$ -- 87
+text.length$ -- 8
+text.prefix$ -- 1
 top$ -- 0
-type$ -- 128
-warning$ -- 1
-while$ -- 64
-width$ -- 18
-write$ -- 220
-(There was 1 warning)
+type$ -- 228
+warning$ -- 3
+while$ -- 111
+width$ -- 31
+write$ -- 394
+(There were 3 warnings)

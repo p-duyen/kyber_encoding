@@ -1,12 +1,31 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{SVCO{\etalchar{+}}10}
 
+\bibitem[ABD{\etalchar{+}}17]{kyber}
+Roberto~Maria Avanzi, Joppe~W. Bos, L{\'e}o Ducas, Eike Kiltz, Tancr{\`e}de
+  Lepoint, Vadim Lyubashevsky, John~M. Schanck, Peter Schwabe, Gregor Seiler,
+  and Damien Stehl{\'e}.
+\newblock Crystals-kyber algorithm specifications and supporting documentation.
+\newblock 2017.
+
+\bibitem[ACLZ20]{menc1}
+Dorian Amiet, Andreas Curiger, Lukas Leuenberger, and Paul Zbinden.
+\newblock {\em Defeating NewHope with a Single Trace}, pages 189--205.
+\newblock 04 2020.
+
 \bibitem[BC22]{Kmaskimp0}
 Olivier Bronchain and Gaëtan Cassiers.
 \newblock Bitslicing arithmetic/boolean masking conversions for fun and profit
   with application to lattice-based kems.
 \newblock Cryptology ePrint Archive, Paper 2022/158, 2022.
 \newblock \url{https://eprint.iacr.org/2022/158}.
+
+\bibitem[BDK{\etalchar{+}}20]{scr}
+Michiel~Van Beirendonck, Jan-Pieter D'Anvers, Angshuman Karmakar, Josep
+  Balasch, and Ingrid Verbauwhede.
+\newblock A side-channel resistant implementation of saber.
+\newblock Cryptology ePrint Archive, Paper 2020/733, 2020.
+\newblock \url{https://eprint.iacr.org/2020/733}.
 
 \bibitem[BDMS22]{distinguishers}
 Olivier Bronchain, François Durvaux, Loïc Masure, and François-Xavier
@@ -37,6 +56,13 @@ Eloi Chérisey, Sylvain Guilley, Pablo Piantanida, and Olivier Rioul.
   rate in side-channel analysis.
 \newblock {\em IACR Transactions on Cryptographic Hardware and Embedded
   Systems}, 02 2019.
+
+\bibitem[CKA{\etalchar{+}}21]{decaps3}
+Zhaohui Chen, Emre Karabulut, Aydin Aysu, Yuan Ma, and Jiwu Jing.
+\newblock An efficient non-profiled side-channel attack on the
+  crystals-dilithium post-quantum signature.
+\newblock In {\em 2021 IEEE 39th International Conference on Computer Design
+  (ICCD)}, pages 583--590, 2021.
 
 \bibitem[DFS16]{optimalmask}
 Stefan Dziembowski, Sebastian Faust, and Maciej Sk{\'o}rski.
@@ -72,6 +98,30 @@ Daniel Heinz, Matthias~J. Kannwischer, Georg Land, Thomas Pöppelmann, Peter
 \newblock Cryptology ePrint Archive, Paper 2022/058, 2022.
 \newblock \url{https://eprint.iacr.org/2022/058}.
 
+\bibitem[Koc96]{kocher}
+Paul~C. Kocher.
+\newblock Timing attacks on implementations of diffie-hellman, rsa, dss, and
+  other systems.
+\newblock In {\em Advances in Cryptology - CRYPTO '96, 16th Annual
+  International Cryptology Conference, Santa Barbara, California, USA, August
+  18-22, 1996, Proceedings}, volume 1109 of {\em Lecture Notes in Computer
+  Science}, pages 104--113. Springer, 1996.
+
+\bibitem[LZH{\etalchar{+}}22]{liu}
+Yanbin Li, Jiajie Zhu, Yuxin Huang, Zhe Liu, and Ming Tang.
+\newblock Single-trace side-channel attacks on the toom-cook: The case study of
+  saber.
+\newblock {\em IACR Transactions on Cryptographic Hardware and Embedded
+  Systems}, 2022(4):285–310, Aug. 2022.
+
+\bibitem[MBM{\etalchar{+}}22]{decaps2}
+Catinca Mujdei, Arthur Beckers, Jose Maria~Bermudo Mera, Angshuman Karmakar,
+  Lennert Wouters, and Ingrid Verbauwhede.
+\newblock Side-channel analysis of lattice-based post-quantum cryptography:
+  Exploiting polynomial multiplication.
+\newblock Cryptology ePrint Archive, Paper 2022/474, 2022.
+\newblock \url{https://eprint.iacr.org/2022/474}.
+
 \bibitem[MDP19]{DNN}
 Loïc Masure, Cécile Dumas, and Emmanuel Prouff.
 \newblock A comprehensive study of deep learning for side-channel analysis.
@@ -85,11 +135,31 @@ Loïc Masure, Pierrick Méaux, Thorben Moos, and François-Xavier Standaert.
 \newblock Cryptology ePrint Archive, Paper 2022/863, 2022.
 \newblock \url{https://eprint.iacr.org/2022/863}.
 
+\bibitem[NDGJ21]{decaps1}
+Kalle Ngo, Elena Dubrova, Qian Guo, and Thomas Johansson.
+\newblock A side-channel attack on a masked ind-cca secure saber kem
+  implementation.
+\newblock {\em IACR Transactions on Cryptographic Hardware and Embedded
+  Systems}, 2021(4):676–707, Aug. 2021.
+
 \bibitem[OSPG18]{Kmask1}
 Tobias Oder, Tobias Schneider, Thomas Pöppelmann, and Tim Güneysu.
 \newblock Practical cca2-secure and masked ring-lwe implementation.
 \newblock {\em IACR Transactions on Cryptographic Hardware and Embedded
   Systems}, 2018(1):142–174, Feb. 2018.
+
+\bibitem[PP19]{primas2}
+Peter Pessl and Robert Primas.
+\newblock More practical single-trace attacks on the number theoretic
+  transform.
+\newblock Cryptology ePrint Archive, Paper 2019/795, 2019.
+\newblock \url{https://eprint.iacr.org/2019/795}.
+
+\bibitem[PPM17]{primas}
+Robert Primas, Peter Pessl, and Stefan Mangard.
+\newblock Single-trace side-channel attacks on masked lattice-based encryption.
+\newblock Cryptology ePrint Archive, Paper 2017/594, 2017.
+\newblock \url{https://eprint.iacr.org/2017/594}.
 
 \bibitem[PR13]{Prouff13}
 Emmanuel Prouff and Matthieu Rivain.
@@ -97,6 +167,20 @@ Emmanuel Prouff and Matthieu Rivain.
 \newblock In Thomas Johansson and Phong~Q. Nguyen, editors, {\em Advances in
   Cryptology -- EUROCRYPT 2013}, pages 142--159, Berlin, Heidelberg, 2013.
   Springer Berlin Heidelberg.
+
+\bibitem[RPBC20]{shuffling}
+Prasanna Ravi, Romain Poussier, Shivam Bhasin, and Anupam Chattopadhyay.
+\newblock On configurable sca countermeasures against single trace attacks for
+  the ntt - a performance evaluation study over kyber and dilithium on the arm
+  cortex-m4.
+\newblock Cryptology ePrint Archive, Paper 2020/1038, 2020.
+\newblock \url{https://eprint.iacr.org/2020/1038}.
+
+\bibitem[SKL{\etalchar{+}}20]{menc2}
+Bo-Yeon Sim, Jihoon Kwon, Joohee Lee, Il-Ju Kim, Tae-Ho Lee, Jaeseung Han,
+  Hyojin Yoon, Jihoon Cho, and Dong-Guk Han.
+\newblock Single-trace attacks on message encoding in lattice-based kems.
+\newblock {\em IEEE Access}, 8:183175--183191, 2020.
 
 \bibitem[SVCO{\etalchar{+}}10]{2dpa}
 Fran{\c{c}}ois-Xavier Standaert, Nicolas Veyrat-Charvillon, Elisabeth Oswald,
@@ -109,5 +193,13 @@ Fran{\c{c}}ois-Xavier Standaert, Nicolas Veyrat-Charvillon, Elisabeth Oswald,
 Nicolas Veyrat-Charvillon, Benoît Gérard, and François-Xavier Standaert.
 \newblock Soft analytical side-channel attacks.
 \newblock 12 2014.
+
+\bibitem[XPR{\etalchar{+}}20]{menc3}
+Zhuang Xu, Owen Pemberton, Sujoy~Sinha Roy, David Oswald, Wang Yao, and Zhiming
+  Zheng.
+\newblock Magnifying side-channel leakage of lattice-based cryptosystems with
+  chosen ciphertexts: The case study of kyber.
+\newblock Cryptology ePrint Archive, Paper 2020/912, 2020.
+\newblock \url{https://eprint.iacr.org/2020/912}.
 
 \end{thebibliography}

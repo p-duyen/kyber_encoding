@@ -18,64 +18,68 @@
 
 \section{Introduction}
 
-\todo{1.PKE to PQC}
-PKE schemes are threatening under quantum computing. This thread leads to the need for new cryptographical schemes that are secure even if the adversary has sufficient quantum power. In 07/2023, Kyber was officially selected as the standard post-quantum cryptographical scheme by NIST. The security of Kyber is based on the hardness of solving the learning-with-errors problem in module lattices(MLWE problem [66]).
+It is not overstated to claim that the cryptography community is undergoing a major transition under the threat posed by quantum computing. Over the last few decades, building sufficiently large quantum computers has progressed from being physically impossible to being merely an engineer hurdle. As a result, it puts many of the public-key cryptosystems currently in use at risk, consequentially, compromises the confidentiality and integrity of digital communications. In order to prepare the information security systems to be able to resist quantum computing, in 2016 the USA National Institute of Standards and Technology (NIST), initialized a standardization process to promote quantum-resistant public-key cryptographic algorithms (also known as post-quantum cryptography, PQC). 
 
-\todo{SCA on KYBER}
-Despite the concrete CPA-secure for public key encryption (PKE) and CCA-secure for key encapsulation mechanism (KEM), Kyber has been proven to be vulnerable under various Side-channel Attacks (SCA), from SPA in \fxwarning{citation} to DPA in \fxwarning{citation}. Therefore, many publications were dedicated to improving side-channel resilience for Kyber's implementation. The most prominent countermeasure used is masking with several optimizations.\todo{Add brief SCA into}
-Masking for Kyber differs from masking for former symmetric or asymmetric key schemes since the computations happen in binary and prime fields and the special distribution of the secret. Even though it can use ready tools available for both cases, Boolean masking for the first field and arithmetic masking for the latter. Both masking schemes have been carefully studied and yielded very concrete, provable security levels \fxwarning{cite Provable proof for Boolean masking and arithmetic masking}.
-\todo{Masking}
+After four rounds of evaluation, in 2022, NIST selected CRYSTALS-KYBER \cite{kyber} as the winner of Public-key Encryption and Key-establishment Algorithms. KYBER belongs to lattice-based key encapsulation mechanism (KEM) family. Its hardness is based on module learning-with-errors problem (M-LWE) which is conjectured to be hard to solve even by sufficiently large quantum computers. Despite the concrete mathematical security of the algorithmic designs, KYBER has been shown to be vulnerable under implementation security perspective as more and more attacks from Side-channel Attack (SCA) family have been proven to be effective. 
 
-However, constraints over these concrete results do not allow a direct induction to arithmetic masking for Kyber since the coefficients of the secret polynomials have centered binomial distribution on relatively small support.
-Therefore, in this note, we, for the first time, take a closer look at arithmetic masking, specifically for Kyber, and provide a distinct angle of how different the scheme is compared to former well-studied encodings, thus motivating a deeper look at the subject.\todo{add relevant citations }
-\todo{maybe split it to subsection? Masking proofs, arithmetic noise amplification, ...}
+SCAs were first studied in the late 1990s by Kocher \cite{kocher}, where it exploited the implementation execution time to significantly reduce the computational cost of the key-recovering attack. SCAs from then on have been spreading widely and various  additional information such as power consumption, electromagnetic emanation, photoemission, \dots, are utilized to thwart the implementations' security.
 
-We first give several notions and notations needed for the note in Section \ref{sec:bg}. Next, an analysis on simulated data is carried in Section \ref{sec:sim} and finally, a quick evaluation proceeded on real measurements in Section \ref{sec:onm} aims to verify the relevance of former results.
+Same as other lattice-based schemes, Kyber has been subjected to a variety of SCAs. These attacks are diverse in term of target procedure (e.g. Key Generation \cite{primas}, \cite{primas2}, \cite{liu}, Encapsulation \cite{menc1}, \cite{menc2}, \cite{menc3}, Decapsulation \cite{decaps1}, \cite{decaps2}, \cite{decaps3}, \dots), target operation within the procedure (e.g. Number Theoretic Transform (NTT), polynomial multiplication, Message Encode, KECCAK), attack vector (e.g. execution time, power consumption, Electromagnetic Emanation), etc. to name a few. Therefore, many studies have dedicated to improve side-channel resilience of Kyber's implementation by using countermeasures such as shuffling (e.g.  \cite{shuffling}, \cite{menc1}), or masking (e.g.  \cite{scr}, \cite{Kmask1}, \cite{Kmaskimp0}).
+
+
+
+Masking on Kyber differs from masking for former symmetric or asymmetric key schemes. The computations happen in power-of-two and prime-order groups, thus it requires both Boolean and arithmetic masking at once as well as their two-way conversion. Both masking schemes have been carefully studied and yielded very concrete, provable security levels \fxwarning{cite Provable sec for Boolean masking and arithmetic masking}. 
+
+Recently, arithmetic masking over prime-order group has been drawing attentions, thanks to its natural noise amplification effect \cite{optimalmask}, \cite{primemask}. However, some constraints over these formal results prevent a direct generalization for its effectiveness on Kyber, due to the special distribution of the secret. Therefore, in this note, we examine arithmetic masking particularly for Kyber, provide a atypical angle on its primary distinction from previously well-studied schemes, and so encourage further study on the subject.
+
+
+We first give several notions and notations needed for the note in Section \ref{sec:bg}. Next, an analysis on simulated data is carried in Section \ref{sec:sim}. Finally, a quick evaluation proceeded on real measurements in Section \ref{sec:onm} aims to verify the relevance of former results.
 \section{Background}\label{sec:bg}
-We now recall some necessary notations and notions for the rest of the paper.
-\subsection*{Crystal-Kyber}
-\subsubsection*{Polynomial Arithmetic}
+Let us first lay out some notions regarding the arithmetic masking on Kyber.
+\subsection{Crystal-Kyber}
+\subsubsection{Polynomial Arithmetic}
 Kyber computations work on polynomial ring $R_q = \mathbb{Z}_q[X]/(X^n + 1)$ where $q$ is a prime that allow efficient Number Theory Transformation and $n$ is the size of message space. 
-The polynomials are denoted as lower case $f \in R_q$ and have the form:
+A polynomial in such ring $f$ has the form as:
 \begin{equation}
 	f = f_0 + f_1\cdot X^1 + \dots + f_{n-1}\cdot X^{n-1}
 \end{equation}
-where each coefficient $f_i$ lies in one residue class in $\mathbb{Z}_q$.
+where each coefficient $f_i$ lies in $\mathbb{Z}_q$.
 The secret $\mathbf{s}$ in Kyber is a vector of $k$ polynomials in $R^k_q$ such that each polynomial $\mathbf{s}[i] \in R_q$.
-\todo{Mention PKE, KEM Encaps Decaps?}
-\subsubsection*{Centered binomial distribution}
+
+\subsubsection{Centered binomial distribution}
 
 For the sake of simplicity we use upper cases to denote random variables and calligraphic letters to denote sets.
-A random variable $X$ we denote $X \overset{\$}{\leftarrow} \mathcal{X}$ where $X$ is uniform distributed over $\mathcal{X}$ and $X \leftarrow D$ when $X$ is chosen according to the distribution $D$.\\
-Noise in Kyber is sampled from centered binomial distribution $\beta_{eta}$ for $\eta=2$ or $\eta=3$ and is defined as:
-$$
-s \leftarrow \beta_{\eta}
-(a_1, a_2, \dots, a_{\eta}, b_1, b_2, \dots, b_{\eta}) \overset{\$}{\leftarrow} \{0, 1\}^{2\eta}
-s = \sum_{i=1}^{\eta}(a_i-b_i)
-$$
+A random variable $X$ we denote $X \overset{\$}{\leftarrow} \mathcal{X}$ where $X$ is uniform distributed over $\mathcal{X}$ and $X \leftarrow D$ when $X$ is chosen according to the distribution $D$.
+
+The noise (as well as secret) in Kyber is sampled from centered binomial distribution (CBD) $\beta_{\eta}$ for $\eta \in \mathbb{N}$, $s \leftarrow \beta_{\eta}$ and is computed as:
+\begin{align*}
+	&(a_1, a_2, \dots, a_{\eta}, b_1, b_2, \dots, b_{\eta}) \overset{\$}{\leftarrow} \{0, 1\}^{2\eta}\\
+	&s = \sum_{i=1}^{\eta}(a_i-b_i)
+\end{align*}
+
 The parameters set of Kyber for Round 3 of the NIST competition is summarized in below table:\todo{Add spec table}
 Since this note focus on encoding of polynomials we take $n, q, \eta$ value as in the table but keep $k=1$ for simplicity of the analysis.
 
-Several SCA were proven to be threatening to the prime arithmetic computations in KYBER.Decaps \fxwarning[]{citations}, thus, countermeasures required on the process to project the scheme. Furthermore, few of them especially exploit the fact that the noise (i.e. the secret also) of KYBER lies in a small range of the field \fxwarning[]{citations}. Countermeasures applied to this part of the computation therefore, is somehow irregular \fxnote[]{wording} 
 
 
+\subsubsection{Share Encoding}
 
-\subsubsection*{Sharing Encoding}
+
+Masking is a popular countermeasure against DPA that aims to randomize the intermediate values processed by the device, thus making the side-channel leakage independent of the sensitive values. The core idea is to probabilistically split the sensitive variables into shares, the computations process on shares and only combined at the end to get the correct output. Masking generally works for most cryptographic schemes, agnostic to the attack strategy, and guarantees a provable security.
 
 
-Masking is a popular countermeasure against DPA that aims to randomizing the intermediate values that are processed by the device thus making the side-channel leakage independent of the sensitive values. It generally works for most of the cryptographic schemes and has been extensively studied, even got provable security. The core idea of masking is to probabilistically split the sensitive variables into $d$ shares, the cryptographic computations process on shares and only combined at the end to get the correct output. If the information of any $d-1$ tuple of shares reveals nothing about the sensitive value then $d$-share masking (i.e. $d+1$ masking) was proven to be secure against $d+1$-order SCA.\fxwarning{Double check and add citation}
-
-In a $d$-share masked implementation, each intermediate variable is concealed by $d$ shares. The process of splitting a target value into $d$ \textit{random} values is called sharing encoding. The encoding representation determines the relations among shares and its target value, thus determines how the computations on shares are combined in the end. We extend the definition in \cite{Prouff13} in order to simplify the notations.
-\begin{definition}[$d$-share encoding]
-	Let $\mathcal{X}$ is a set in a group $(G, \ast)$ where $\ast$ is some group operation, let $d$ be a positive integer. The $d^{th}$-share encoding of $x \in \mathcal{X}$ is a maps
+In a $d^{\text{th}}$-order masked implementation, each intermediate variable is concealed by $d + 1$ shares. The process of splitting a target value into $d+1$ \textit{random} values is called share encoding. The encoding representation determines the relations among shares and its target value, thus determines how the computations on shares are combined in the end. We extend the definition in \cite{Prouff13} in order to simplify the notations.
+\begin{definition}[$d^{\text{th}}$-order encoding]
+	Let $\mathcal{X}$ is a set in a group $(G, \ast)$ where $\ast$ is some group operation, let $d$ be a positive integer. The $d^{th}$-order encoding of $x \in \mathcal{X}$ is a maps
 	\begin{align*} 
-		{Enc}^{\ast}_d: \mathcal{X} &\rightarrow G^d:\\ 
-		x &\mapsto (x_1, x_2, \dots, x_d)
+		{Enc}^{\ast}_{d+1}: \mathcal{X} &\rightarrow G^d:\\ 
+		x &\mapsto (x_0, x_1, \dots, x_d)
 	\end{align*}
-such that $(x_i)_{i=1}^{d-1} \overset{\$}{\leftarrow} G$ and $x = x_1 \ast x_2 \ast \dots \ast x_d$	
+such that $(x_i)_{i=0}^{d-1} \overset{\$}{\leftarrow} G$ and $x = x_0 \ast x_2 \ast \dots \ast x_d$	
 \end{definition}
-Difference masking schemes have different encoding representation, for example, in symmetric schemes where the working group is $\mathbb{Z}_{256}$, for 2-share Boolean masking $\text{Enc}^{\oplus}_{2}(X) = (X_1, X_2)$ where $X_1 \overset{\$}{\leftarrow} \mathbb{Z}_{256},\ X_2 = X \oplus X_1$ and for multiplicative masking, the encoding representation is in the form $\text{Enc}^{\otimes}_{2}(X) = (X_1, X_2)$ where $X_1 \overset{\$}{\leftarrow} \mathbb{Z}_{256},\ X_2 = X \otimes X_1 \text{ or } X_2 = X \otimes X_1^{-1}$.
+Difference masking schemes have different encoding representation, for example, in symmetric schemes where the working group is $\mathbb{Z}_{256}$, for ifrst-order Boolean masking $\text{Enc}^{\oplus}_{2}(X) = (X_1, X_2)$ where $X_1 \overset{\$}{\leftarrow} \mathbb{Z}_{256},\ X_2 = X \oplus X_1$ and for multiplicative masking, the encoding representation is in the form $\text{Enc}^{\otimes}_{2}(X) = (X_1, X_2)$ where $X_1 \overset{\$}{\leftarrow} \mathbb{Z}_{256},\ X_2 = X \otimes X_1 \text{ or } X_2 = X \otimes X_1^{-1}$.
 \todo{General masking scheme for KYBER}
+
 As mentioned earlier, the secret polynomial in Kyber can be express as a vector in $\mathbb{Z}_q$:
 $s = [s_0, s_1, \dots, s_n],\ s_i \leftarrow \beta_{\eta}$, all available masking schemes for polynomial computation of Kyber \fxwarning{citations} use additive arithmetic encoding, e.g.
 \begin{align*}
@@ -83,7 +87,9 @@ $s = [s_0, s_1, \dots, s_n],\ s_i \leftarrow \beta_{\eta}$, all available maskin
 	x_1 &\overset{\$}{\leftarrow} \mathbb{Z}_q^n\\
 	x_2 &= s-x_1 \mod q
 \end{align*}
-For the rest of the note, we only study additive arithmetic encoding, thus, to simplify the notation we omit the operation specification of the encoding and keep $d$ subscript to specify the number of shares. Furthermore, the coefficients are independent \fxwarning{Kyber algo citation} and the encoding acts on each coefficient independently, hence, we only consider encoding for one coefficient (i.e. 1-D variable) instead of the full polynomial (i.e. 256-D variable).
+For the rest of the note, we only study additive arithmetic encoding, thus, to simplify the notation we omit the operation specification of the encoding and keep $d$ subscript to specify the number of shares. 
+
+Furthermore, since the coefficients of $s$ are independent and the encoding acts on each coefficient independently, we only consider encoding for one coefficient (i.e. 1-D variable) instead of the full polynomial (i.e. 256-D variable).
 
 Similar to multiplicative encoding in $\mathbb{Z}_{256}$, additive arithmetic encoding in $\mathbb{Z}_q$ can have different representation, e.g. for $\text{Enc}_{2}(X) = (X_1, X_2)$ then there are two different ways to combine the two shares into protect variable $X$ as:
 \begin{align*}
@@ -98,7 +104,7 @@ To distinguish different representations, as an abuse of notation, we denote:
 \end{align*}
 where $X_i \overset{\$}{\leftarrow} \mathbb{Z}_q^n,\ \text{for } i \in \{1, \dots, d-1\}$.
 \subsection*{SCA Metrics and Distinguishers}
-We next recall some notions relevant in SCA.
+We next recall some SCAs' relevant notions.
 \subsubsection*{Assumptions}
 First, let $X$ be the sensitive variable that is masked using the $d$-share encoding $\text{Enc}_d(X) = (X_1, X_2, \dots, X_d)$, thus the device carries computations on $(X_1, X_2, \dots, X_d)$ and produces corresponding leakage vector $\bm{L}(X) = (L_1, L_2, \dots, L_d)$.
 , the leakage of each share can be written as $L(X_i) = \delta(X_i) + N_i$ where $\delta$ is a deterministic function of $X_i$ and $N_i$ denotes the random noise. The full leakage vector corresponding the process on $X$ can be express as $\mathbf{L} = (L(X_1), L(X_2), \dots, L(X_d))$.

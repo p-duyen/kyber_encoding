@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 AUG 2023 20:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  10 AUG 2023 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1426,194 +1426,160 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
 .
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 21.
-Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
-line 25.
-
-
-FiXme Warning: 'citation' on input line 25.
-
-
-FiXme Warning: 'citation' on input line 25.
-
-
-FiXme Warning: 'cite Provable proof for Boolean masking and arithmetic masking'
- on input line 26.
-
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-[1
+) [1
 Non-PDF special ignored!
 <special> papersize=614.295pt,794.96999pt
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Package hyperref Info: bookmark level for unknown fixme defaults to 0 on input 
+line 31.
 
-FiXme Warning: 'citations' on input line 59.
 
-
-FiXme Warning: 'citations' on input line 59.
-
-FiXme Note: 'wording' on input line 59.
-
-FiXme Warning: 'Double check and add citation' on input line 66.
+FiXme Warning: 'cite Provable sec for Boolean masking and arithmetic masking' o
+n input line 31.
 
 [2]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 60.
 
-FiXme Warning: 'citations' on input line 80.
 
+FiXme Warning: 'citations' on input line 84.
 
-FiXme Warning: 'Kyber algo citation' on input line 86.
+[3] [4]
 
-[3]
-
-FiXme Warning: 'IT citation' on input line 121.
-
-[4]
-
-FiXme Warning: 'wording' on input line 154.
+FiXme Warning: 'IT citation' on input line 127.
 
 [5]
 
-LaTeX Warning: Reference `eg:f2p' on page 6 undefined on input line 166.
+FiXme Warning: 'wording' on input line 160.
 
 
-FiXme Warning: 'LDA in SCA citations' on input line 175.
-
-
-FiXme Warning: 'few citations' on input line 180.
+LaTeX Warning: Reference `eg:f2p' on page 6 undefined on input line 172.
 
 [6]
-FiXme Note: 'wording' on input line 188.
 
-Overfull \hbox (7.27594pt too wide) in paragraph at lines 192--193
+FiXme Warning: 'LDA in SCA citations' on input line 181.
+
+
+FiXme Warning: 'few citations' on input line 186.
+
+FiXme Note: 'wording' on input line 194.
+[7]
+Overfull \hbox (7.27594pt too wide) in paragraph at lines 198--199
 \OT1/cmr/m/n/10 written as the con-vo-lu-tion of each share leak-age com-po-nen
 t. Pre-cisely, if $[][](\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 ) =
  []
 
-[7]
+[8]
 
-FiXme Warning: 'citations' on input line 220.
+FiXme Warning: 'citations' on input line 226.
 
 
-Overfull \hbox (21.28136pt too wide) in paragraph at lines 222--223
+Overfull \hbox (21.28136pt too wide) in paragraph at lines 228--229
 \OT1/cmr/m/n/10 as $(\OML/cmm/m/it/10 X[]; X[]; [] ; X[]\OT1/cmr/m/n/10 )$, is 
 a vec-tor $\OML/cmm/b/it/10 L \OT1/cmr/m/n/10 = []$,
  []
 
-[8]
 
-FiXme Warning: 'citations' on input line 230.
+FiXme Warning: 'citations' on input line 236.
 
-<figures/5_dist_sum.png, id=171, 1868.9825pt x 489.83pt>
+<figures/5_dist_sum.png, id=199, 1868.9825pt x 489.83pt>
 File: figures/5_dist_sum.png Graphic file (type png)
 <use figures/5_dist_sum.png>
-Package pdftex.def Info: figures/5_dist_sum.png  used on input line 241.
+Package pdftex.def Info: figures/5_dist_sum.png  used on input line 247.
 (pdftex.def)             Requested size: 341.43306pt x 89.48105pt.
-FiXme Note: 'wording' on input line 246.
-<figures/3329_dist_modes.png, id=176, 1387.584pt x 723.4227pt>
+FiXme Note: 'wording' on input line 252.
+[9]
+<figures/3329_dist_modes.png, id=212, 1387.584pt x 723.4227pt>
 File: figures/3329_dist_modes.png Graphic file (type png)
 <use figures/3329_dist_modes.png>
-Package pdftex.def Info: figures/3329_dist_modes.png  used on input line 253.
+Package pdftex.def Info: figures/3329_dist_modes.png  used on input line 259.
 (pdftex.def)             Requested size: 346.89514pt x 180.85522pt.
-[9 <./figures/5_dist_sum.png>]
-<figures/mi_234.png, id=189, 1170.3725pt x 862.22125pt>
+<figures/mi_234.png, id=216, 1170.3725pt x 862.22125pt>
 File: figures/mi_234.png Graphic file (type png)
 <use figures/mi_234.png>
-Package pdftex.def Info: figures/mi_234.png  used on input line 262.
+Package pdftex.def Info: figures/mi_234.png  used on input line 268.
 (pdftex.def)             Requested size: 163.85103pt x 120.71014pt.
-<figures/mi_lines_modes.png, id=190, 981.6675pt x 778.91pt>
+<figures/mi_lines_modes.png, id=217, 981.6675pt x 778.91pt>
 File: figures/mi_lines_modes.png Graphic file (type png)
 <use figures/mi_lines_modes.png>
-Package pdftex.def Info: figures/mi_lines_modes.png  used on input line 266.
+Package pdftex.def Info: figures/mi_lines_modes.png  used on input line 272.
 (pdftex.def)             Requested size: 157.07pt x 124.62814pt.
 
-Overfull \hbox (2.05554pt too wide) in paragraph at lines 261--270
+Overfull \hbox (2.05554pt too wide) in paragraph at lines 267--276
 []$[]$ $[]$
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 <./figures/3329_dist_modes.png>]
-<figures/4shares_modes.png, id=205, 1186.4325pt x 826.08624pt>
+[10 <./figures/5_dist_sum.png> <./figures/3329_dist_modes.png>] [11 <./figures/
+mi_234.png> <./figures/mi_lines_modes.png>]
+<figures/4shares_modes.png, id=245, 1186.4325pt x 826.08624pt>
 File: figures/4shares_modes.png Graphic file (type png)
 <use figures/4shares_modes.png>
-Package pdftex.def Info: figures/4shares_modes.png  used on input line 287.
+Package pdftex.def Info: figures/4shares_modes.png  used on input line 293.
 (pdftex.def)             Requested size: 237.28229pt x 165.21431pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-FiXme Note: 'more citations' on input line 299.
-[11 <./figures/mi_234.png> <./figures/mi_lines_modes.png>] [12 <./figures/4shar
-es_modes.png>]
-<figures/pi_mlps.png, id=243, 849.1725pt x 646.0938pt>
+FiXme Note: 'more citations' on input line 305.
+ [12 <./figures/4shares_modes.png>]
+[13]
+<figures/pi_mlps.png, id=278, 849.1725pt x 646.0938pt>
 File: figures/pi_mlps.png Graphic file (type png)
 <use figures/pi_mlps.png>
-Package pdftex.def Info: figures/pi_mlps.png  used on input line 333.
+Package pdftex.def Info: figures/pi_mlps.png  used on input line 339.
 (pdftex.def)             Requested size: 254.75371pt x 193.82964pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: figures/5_dist_sum.png Graphic file (type png)
 <use figures/5_dist_sum.png>
-Package pdftex.def Info: figures/5_dist_sum.png  used on input line 345.
+Package pdftex.def Info: figures/5_dist_sum.png  used on input line 351.
 (pdftex.def)             Requested size: 373.78989pt x 97.96426pt.
 
-Overfull \hbox (26.66635pt too wide) in paragraph at lines 345--346
+Overfull \hbox (26.66635pt too wide) in paragraph at lines 351--352
  [][] 
  []
 
-<figures/5_dist_diff.png, id=244, 1868.9825pt x 490.83376pt>
+<figures/5_dist_diff.png, id=279, 1868.9825pt x 490.83376pt>
 File: figures/5_dist_diff.png Graphic file (type png)
 <use figures/5_dist_diff.png>
-Package pdftex.def Info: figures/5_dist_diff.png  used on input line 352.
+Package pdftex.def Info: figures/5_dist_diff.png  used on input line 358.
 (pdftex.def)             Requested size: 373.78989pt x 98.16501pt.
 
-Overfull \hbox (26.66635pt too wide) in paragraph at lines 352--353
+Overfull \hbox (26.66635pt too wide) in paragraph at lines 358--359
 [][] 
  []
 
-<figures/11_dist_sum.png, id=245, 1345.6674pt x 703.9098pt>
+<figures/11_dist_sum.png, id=280, 1345.6674pt x 703.9098pt>
 File: figures/11_dist_sum.png Graphic file (type png)
 <use figures/11_dist_sum.png>
-Package pdftex.def Info: figures/11_dist_sum.png  used on input line 362.
+Package pdftex.def Info: figures/11_dist_sum.png  used on input line 368.
 (pdftex.def)             Requested size: 336.41603pt x 175.97702pt.
-<figures/11_dist_diff.png, id=246, 1345.6674pt x 703.9098pt>
+<figures/11_dist_diff.png, id=281, 1345.6674pt x 703.9098pt>
 File: figures/11_dist_diff.png Graphic file (type png)
 <use figures/11_dist_diff.png>
-Package pdftex.def Info: figures/11_dist_diff.png  used on input line 371.
+Package pdftex.def Info: figures/11_dist_diff.png  used on input line 377.
 (pdftex.def)             Requested size: 336.41603pt x 175.97702pt.
-<figures/MI_23_234.png, id=251, 1089.06876pt x 825.0825pt>
+<figures/MI_23_234.png, id=286, 1089.06876pt x 825.0825pt>
 File: figures/MI_23_234.png Graphic file (type png)
 <use figures/MI_23_234.png>
-Package pdftex.def Info: figures/MI_23_234.png  used on input line 382.
+Package pdftex.def Info: figures/MI_23_234.png  used on input line 388.
 (pdftex.def)             Requested size: 341.43306pt x 258.66856pt.
-<figures/snr_2shares.png, id=252, 1212.53pt x 911.405pt>
+<figures/snr_2shares.png, id=287, 1212.53pt x 911.405pt>
 File: figures/snr_2shares.png Graphic file (type png)
 <use figures/snr_2shares.png>
-Package pdftex.def Info: figures/snr_2shares.png  used on input line 388.
+Package pdftex.def Info: figures/snr_2shares.png  used on input line 394.
 (pdftex.def)             Requested size: 341.43306pt x 256.63797pt.
-(./CARDIS_lightweight.bbl [13] [14 <./figures/pi_mlps.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 69--74
+(./CARDIS_lightweight.bbl [14 <./figures/pi_mlps.png>] [15 <./figures/5_dist_di
+ff.png>] [16 <./figures/11_dist_sum.png> <./figures/11_dist_diff.png>] [17 <./f
+igures/MI_23_234.png>] [18 <./figures/snr_2shares.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 95--100
 []\OT1/cmr/m/n/9 Daniel Heinz, Matthias J. Kan-nwis-cher, Georg Land, Thomas
  []
 
-)
+[19])
 
-FiXme Summary: Number of notes: 4,
-(FiXme)        Number of warnings: 14,
+FiXme Summary: Number of notes: 3,
+(FiXme)        Number of warnings: 8,
 (FiXme)        Number of errors: 0,
 (FiXme)        Number of fatal errors: 0,
-(FiXme)        Total: 18.
+(FiXme)        Total: 11.
 
-[15 <./figures/5_dist_diff.png>] [16 <./figures/11_dist_sum.png> <./figures/11_
-dist_diff.png>] [17 <./figures/MI_23_234.png>] [18 <./figures/snr_2shares.png>]
-(./CARDIS_lightweight.aux)
+[20] (./CARDIS_lightweight.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1621,16 +1587,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `CARDIS_lightweight.out' has not changed.
-(rerunfilecheck)             Checksum: D117EE2AD950DD4A9FA837B071FE78C1;1548.
+(rerunfilecheck)             Checksum: 2772A0511C6A31427289AB90408ECFD6;1675.
  ) 
 Here is how much of TeX's memory you used:
- 57293 strings out of 478287
- 1442245 string characters out of 5849289
- 2087784 words of memory out of 5000000
- 74545 multiletter control sequences out of 15000+600000
+ 57260 strings out of 478287
+ 1441159 string characters out of 5849289
+ 2075234 words of memory out of 5000000
+ 74504 multiletter control sequences out of 15000+600000
  483410 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,12n,120p,800b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 104i,12n,120p,851b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
@@ -1656,10 +1622,10 @@ s/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
 .pfb>
-Output written on CARDIS_lightweight.pdf (18 pages, 1201691 bytes).
+Output written on CARDIS_lightweight.pdf (20 pages, 1211312 bytes).
 PDF statistics:
- 434 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
- 104 named destinations out of 1000 (max. 500000)
- 140 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 377 compressed objects within 4 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
