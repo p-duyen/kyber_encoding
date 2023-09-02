@@ -192,13 +192,19 @@
 	where $\bar{\mathbf{\mu}}_c $ are computed on projected traces, and the pooled covariance matrix $\bm{\Sigma}$ is computed as:
 	$$\bm{\Sigma} = \frac{1}{N}\sum_{x \in \mathcal{X}} n_x \bm{\Sigma}_x$$
 	\subsubsection*{Multi-Layer Perceptron} 
-	Multi-Layer Perceptron (MLP) acts as an efficient tool for supervised classification problem \fxwarning{few citations} and is extensively used in SCA. An MLP is composed of several different  trainable layers (i.e. ). In its simplest form, MLP usually has a few pairs of \textit{linear layer} directly followed by a \textit{non-linear activation function}, sequentially stacked up, and then finally outputs a discriminative model using a \textit{sofmax} layer. 
+	Multi-Layer Perceptron (MLP) acts as an efficient tool for supervised classification problems \fxwarning{few citations} and is extensively used in SCA. An MLP is composed of several different  trainable layers. In its simplest form, MLP usually has a few pairs of \textit{linear layer} directly followed by a \textit{non-linear activation function}, sequentially stacked up, and then finally outputs a discriminative model using a \textit{sofmax} layer. 
 	
 	During the training phase, the parameters of the layers are gradually changed in the direction that optimizes an objective. We set the objective to be minimizing the Negative Logarithm Likelihood Loss, since it was shown in \cite{DNN} to be relevant to profiled SCA.
 	
-	Using NLL loss as the objective, we can also use the validation loss of the network to estimate the PI value of the training model $p$. Thus, we apply the Early Stopping technique, where the criteria is the minimal validation loss (in other words, maximal validation PI). 
+	Using NLL loss as the objective, we can also use the validation loss of the network (computed on a separate dataset) to estimate the PI value of the model being trained. Thus, we apply the Early Stopping technique, where the criteria is the minimal validation loss (in other words, maximal validation PI). 
 	
-	MLP can be used in our analysis as a general (no specific assumption required) and straightforward (input the leakage traces directly) model. Therefore, it is used to estimate models on sensitive variables as well as on different shares of the target one.
+	MLP can be approached in two ways:
+	\begin{itemize}
+		\item To directly model $p(S|\bm{l})$ from the leakages and their corresponding masked secret values.
+		\item To model  $p(X_i|\bm{l}_i)$  for each share separately. The input are the leakages and their corresponding share values.
+	\end{itemize}
+
+	In both approaches, MLP models the underlying probabilities without any further assumption about the true leakage model. 
 	\subsection*{Soft-Analytical Side-channel Attack}
 	Soft-analytical side-channel Attack (SASCA) was first introduced in \cite{sasca} and has been extensively used in recent studies (\cite{lcert}, \cite{mshares}, \cite{primemask}, \dots). The Belief-Propagation (BP) algorithm at the core of the method allows many time samples (corresponding to many intermediate variables) in the leakages to be exploited simultaneously while keeping the computational cost reasonable enough. \fxnote[]{wording}
 	
@@ -208,21 +214,23 @@
 	\begin{equation}
 		f(\bm{l}|s) = \sum_{\substack{x_1,\\\dots, \\x_{d-1} \in \mathbb{Z}_Q}}f(\bm{l}|s, x_1, \dots, x_{d-1})\cdot p(x_1, \dots, x_{d-1}),
 	\end{equation}
-	where $X_i \overset{\$}{\leftarrow} \mathbb{Z}_Q$, independently, for $i\in {1, \dots, d-1}$. If we consider the independent leakage assumption, we have
-	\begin{equation}
-		f(\bm{l}|x) = \sum_{\substack{x_1,\\\dots, \\x_{d-1} \in  \mathbb{Z}_Q}}\prod_{i=1}^{d}f(l_i|x_i)\cdot \prod_{i=1}^{d-1}p(x_i).
-	\end{equation}
+	where $X_i \overset{\$}{\leftarrow} \mathbb{Z}_Q$, independently, for $i\in {1, \dots, d-1}$. If we consider the independent leakage assumption, then
+	\begin{align}
+		f(\bm{l}|x) &= \sum_{\substack{x_1,\\\dots, \\x_{d-1} \in  \mathbb{Z}_Q}}\prod_{i=1}^{d}f(l_i|x_i)\cdot \prod_{i=1}^{d-1}p(x_i)\\
+		f(\bm{l}) &= \prod_{i=1}^{d}f(l_i)
+	\end{align}
 	Plug this expression into Eq.\ref{eq:f2p} we have
 	\begin{equation}
-		p\left( s|\bm{l}\right)  = \sum_{\substack{x_1,\\\dots, \\x_{d-1} \in \mathbb{Z}_Q}} \prod_{i=1}^{d} p\left( x_i|l_i\right) \frac{p(s)}{p(x_d)},
+		p\left( s|\bm{l}\right)  = \frac{p\left( x_1|l_1\right) \circ \dots \circ p\left( x_d|l_d\right) p(s)}{\sum_{s'\in \mathcal{S}}p\left( x_1|l_1\right) \circ \dots \circ p\left( x_d|l_d\right)  p(s')}, 
 	\end{equation}
-	where $x_d = s \pm \sum_{i=1}^d x_i$.
+	where $x_d = s \pm \sum_{i=1}^d x_i$ and $\circ$ denotes the convolution operation on the probabilities.
+	\todo{Add sasca diagram}
 	
-	When $p(x_i|li)$ are known (e.g. results from a model or through knowing $f(l_i|x_i)$ in simulation), we instantiate $r^0_{ii} = f_i(x_i)$ where $f_i(x_i) = p(x_i|l_i)$ and $r^0_{ss} = p(s)/Q$, run BP for two steps, we can read out the message at note $S$ as:
+	When $p(x_i|li)$ are known (e.g. results from a model or through knowing $f(l_i|x_i)$ in simulation), we instantiate $r^0_{ii} = f_i(x_i)$ where $f_i(x_i) = p(x_i|l_i)$ and $r^0_{ss} = p(s)$, run BP for two steps, we read out the message at note $S$ as:
 	\begin{equation}
-		Z_s(s) = \frac{p(s)}{Q} \cdot\sum_{\substack{x_i\in  \mathbb{Z}_Q \\ \sum x_i = s}} \prod_{i=1}^{d} p\left( x_i|l_i\right), 
+		Z_s(s) = p(s)\sum_{\substack{x_i\in  \mathbb{Z}_Q \\ \sum x_i = s}} \prod_{i=1}^{d} p\left( x_i|l_i\right), 
 	\end{equation} 
-	and obtain the expected value.
+	and normalize the results among $s$ then we obtain the expected value.
 	
 	
 	\section{Simulated analysis} \label{sec:sim}
@@ -232,14 +240,14 @@
 	
 	The encoding under investigations are $\text{Enc}^{\text{sum}}_{d}$ and $\text{Enc}^{\text{diff}}_{d}$ where the shares $X_i$ are drawn at random from $\mathbb{Z}_Q$ for $i \in \left\lbrace 1, \dots, d-1\right\rbrace $, where $Q$ is 3329 as proposed by KYBER's authors. The last share $X_d$ is computed differently for each representation, $X_d^{\text{sum}} = S + \sum_{i = 1}^{d-1} X_i$ while $X_d^{\text{sum}} = S - \sum_{i = 1}^{d-1} X_i$.
 	
-	The leakage vector corresponding to the processing of $S$ is $\bm{L}$ is simulated as the concatenation of the leakage corresponding to the individual shares i.e., $\bm{L} = \left[ L_1, \dots, L_d \right] $. We consider the Hamming Weight (HW) model, i.e., $\delta(X_i) = \text{HW}(X_i)$, since it is the most used in theoretical analysis \cite{2dpa} and was proven to be relevant to real-life setups for CMOS devices\fxwarning[]{citations}. We also assume Gaussian Noise, i.e. $L_i = \text{HW}(X_i) + b_i$ where $b_i \leftarrow \mathcal{N}(0, \sigma^2)$. 
+	The leakage vector corresponding to the processing of $S$ is $\bm{L}$ is simulated as the concatenation of the leakage corresponding to the individual shares i.e., $\bm{L} = \left[ L_1, \dots, L_d \right] $. We consider the Hamming Weight (HW) model, i.e., $\delta(X_i) = \text{HW}(X_i)$.The HW model is known to be closely model the leakage from CMOS devices \fxwarning[]{citations} and is widely used in theoretical analysis \cite{2dpa}. Moreover, it has been shown such leakage model is effective in masking with prime-order group even in low noise level \cite{optimalmask}, \cite{primemask}. We also assume Gaussian Noise, i.e. $L_i = \text{HW}(X_i) + b_i$ where $b_i \leftarrow \mathcal{N}(0, \sigma^2)$. 
 	
 	To recap, the leakage corresponding to sensitive variable $S$, which is encoded as $(X_1, X_2, \dots, X_d)$, is a vector $\bm{L} = \left[ \text{HW}(X_1) + b_1, \text{HW}(X_2) + b_2, \dots, \text{HW}(X_d) + b_d \right] $, where $b_i \leftarrow \mathcal{N}(0, \sigma^2) $. Precisely, the probability of the share leakage gives its value in the form:
 	\begin{equation}\label{eq:gl}
 		f(l_i|x_i) = \frac{1}{\sigma\sqrt{2\pi}} e^{ -\frac{1}{2}\left( \frac{\text{HW}(x_i)}{\sigma}\right) ^2 }.
 	\end{equation}
 	
-	Accordingly, SNR can be computed as a function of the noise $\sigma$, note that $\mathbb{Z}_Q \subset \mathbb{Z}_{2^{11}}$:
+	Accordingly, SNR can be computed as a function of the noise $\sigma$:
 	$$\text{SNR} \approx \frac{2.76}{\sigma}$$
 	
 	Ultimately, we use $d$ (i.e., the number of shares) and $\sigma$ (i.e., the noise level of the implementation) as the parameters of the analysis since they determine the security level of masking countermeasure \fxwarning[]{citations}.
@@ -309,9 +317,11 @@
 	
 	We emphasize that this interpretation is merely experimental and lacks of concrete theoretical proof. However, we are certain that this trend can be explained in a formal manner.
 	\section{Real-world analysis}\label{sec:onm}
-	We next put the observations in simulation to test with real measurements.
+	We next put the observations in simulation into test with real measurements.
 	
-	We note that several available polynomial masking for KYBER \cite{Kmaskimp0},\cite{Kmaskimp1}, \cite{Kmaskimp2} and all polynomial masking schemes for KYBER (especially and for PQC in general) such as \cite{Kmask1} \fxnote[]{more citations} use $\text{Enc}^{\text{diff}}$ for their representation. This is a positive sign as it has been shown in simulation that it allows exponential security with respect to the number of shares $d$ and $\text{Enc}^{\text{diff}}$ provide better security compared to $\text{Enc}^{\text{sum}}$. However, depending on the implementation, the leakage can actually be in the form of $\text{Enc}^{\text{sum}}$. Normally, to mask a coefficient of the secret $s$, the computations follow:
+	We note that several available polynomial masking for KYBER \cite{Kmaskimp0},\cite{Kmaskimp1}, \cite{Kmaskimp2} and polynomial masking schemes for PQC in general such as \cite{Kmask1} \fxnote[]{more citations} use $\text{Enc}^{\text{diff}}$ for their representation. This is a positive sign as it has been observed in simulation that it allows exponential security with respect to the number of shares $d$ and $\text{Enc}^{\text{diff}}$ provide better security compared to $\text{Enc}^{\text{sum}}$. However, depending on the implementation, the leakage can actually be in the form of $\text{Enc}^{\text{sum}}$. 
+	
+	Normally, to mask a coefficient of the secret $s$, the computations follow:
 	\begin{enumerate}
 		\item Copy $s$ to the last (or the first) share $x_d \leftarrow s$.
 		\item Generate a random number $r$ in $\mathbb{Z}_Q$.
@@ -321,9 +331,9 @@
 			\item Assign $x_i \leftarrow Q - r$ and $x_d = x_d + r$.
 		\end{itemize}
 	\end{enumerate}
-	Both ways in step 3 eventually lead to $\text{Enc}^{\text{diff}}$ representation but notice if we have that leakage corresponding to $r$ then the second ways of computing share gives us the leakage corresponding to $\text{Enc}^{\text{sum}}$.
+	Both ways in step 3 eventually lead to $\text{Enc}^{\text{diff}}$ representation but notice that if we have that leakage corresponding to $r$ then the second ways of computing share gives us the leakage corresponding to $\text{Enc}^{\text{sum}}$.
 	
-	We then use the same implementation such as \cite{Kmaskimp0} but use leakage on $x_i$ and $x_d$ to produce data for $\text{Enc}^{\text{diff}}$ and use leakage on $r$ and $x_d$ to produce data for $\text{Enc}^{\text{sum}}$.
+	We then use the same implementation such as \cite{Kmaskimp0} but use leakage on $x_i$ and $x_d$ to produce data for $\text{Enc}^{\text{diff}}$ and use leakage on $r$ and $x_d$ to produce data for $\text{Enc}^{\text{sum}}$. Instead of running other operations (e.g., NTT) on those sensitive variable, we simply load them to a register and obtain side-channel leakage from such an operation. 
 	
 	We run our implementations on Arm Cortex-M4 STM32F415 and acquire two million traces for each implementation. We first compute SNR on the data to make sure there is no first-order information of $S$ in the traces and to select relevant PoIs for the next step\footnote{SNR on traces are shown in Fig.\ref{fig:snr2}}. In order to compare between implementations, we again base on IT metric and PI to be more specific.
 	
@@ -334,7 +344,7 @@
 		\item PI is estimated using Eq.\ref{eq:pi} on the model given by the previous step.
 	\end{enumerate}
 	
-	We use different distinguishers to model the unknown $p(\cdot|\cdot)$ to inspect the leakages in different assumptions. 
+	We use different distinguishers to model the unknown $p(\cdot|\cdot)$ to inspect the leakages under different assumptions. 
 	The distinguishers are:
 	\begin{description}
 		\item[Plain MLP] We feed MLP the reduced traces $\bm{L}'$ and use it to directly model $p_(s|\bm{l})$ and PI is estimated based on MLP's output. The model $p_(s|\bm{l})$ is estimated without any assumption about the leakage. We make sure that the selected points do not have maximal SNR value w.r.t. the secret to avoid any first-order information of the secret.
